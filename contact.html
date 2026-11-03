@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href="https://drsamuelgalviz.com/contact.html">
+    <title>Get in Touch | Samuel Galviz, MD</title>
+    <style>
+        body, html {
+            margin: 0; padding: 0;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f4f7f6; color: #333;
+        }
+        .contact-wrap {
+            max-width: 500px; margin: 80px auto; padding: 40px;
+            background: #fff; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        .contact-wrap h1 { color: #2c3e50; font-size: 1.75rem; margin-bottom: 8px; }
+        .contact-wrap p { color: #666; font-size: 1rem; margin-bottom: 30px; }
+        .contact-wrap label { display: block; margin-bottom: 6px; font-weight: 600; color: #444; }
+        .contact-wrap input,
+        .contact-wrap textarea {
+            width: 100%; padding: 12px 14px; margin-bottom: 20px;
+            border: 1px solid #ddd; border-radius: 6px; font-size: 1rem; font-family: inherit;
+            box-sizing: border-box;
+        }
+        .contact-wrap textarea { min-height: 120px; resize: vertical; }
+        .contact-wrap input:focus,
+        .contact-wrap textarea:focus {
+            outline: none; border-color: #3498db; box-shadow: 0 0 0 2px rgba(52,152,219,0.2);
+        }
+        .contact-wrap button {
+            width: 100%; padding: 14px;
+            background: #3498db; color: white; border: none; border-radius: 6px;
+            font-size: 1rem; font-weight: 600; cursor: pointer; transition: background 0.3s;
+        }
+        .contact-wrap button:hover { background: #2980b9; }
+        .back-link {
+            display: inline-block; margin-top: 24px;
+            color: #3498db; text-decoration: none; font-weight: 500;
+        }
+        .back-link:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="contact-wrap">
+        <h1>Get in touch</h1>
+        <p>Send me a message and I’ll get back to you as soon as possible.</p>
+        <form action="https://formspree.io/f/xykddqkq" method="POST">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required placeholder="Your name">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required placeholder="your@email.com">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required placeholder="Your message"></textarea>
+            <button type="submit">Send message</button>
+        </form>
+        <a href="index.html" class="back-link">← Back to portfolio</a>
+    </div>
+</body>
+</html>

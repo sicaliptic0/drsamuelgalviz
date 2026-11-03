@@ -1,0 +1,388 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samuel Galviz, MD | Clinical Portfolio</title>
+    <meta name="description" content="Samuel Galviz, MD – Sonographer (RDMS Abdomen, RVT Vascular) with in-depth anatomy knowledge. Board-certified General Surgeon. Esthetician, injector (Botox, fillers). Home Health Aide (HHA) NYC. Medical caregiver with diagnostic sonography expertise.">
+    <meta name="keywords" content="sonographer, ecografista, RDMS abdomen, RVT vascular, diagnostic sonography, medical sonographer, General Surgeon MD, esthetician, injector, Botox, fillers, medical aesthetics, Home Health Aide, HHA NYC, caregiver medical knowledge, Brooklyn sonographer, anatomy imaging">
+    <link rel="canonical" href="https://drsamuelgalviz.com/">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Samuel Galviz",
+        "jobTitle": "Physician, Sonographer, Home Health Aide",
+        "description": "Sonographer (RDMS Abdomen, RVT Vascular) with in-depth anatomy knowledge. Board-certified General Surgeon (Venezuela). Certified HHA in New York State. Medical caregiver with diagnostic sonography expertise.",
+        "email": "samuel.galviz@gmail.com",
+        "url": "https://drsamuelgalviz.com",
+        "image": "https://drsamuelgalviz.com/headshot.jpg",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Brooklyn",
+            "addressRegion": "NY",
+            "addressCountry": "US"
+        },
+        "knowsAbout": ["Diagnostic Sonography", "RDMS Abdomen", "RVT Vascular", "General Surgery", "Medical Anatomy", "Home Health Care", "Patient Care Coordination"],
+        "hasCredential": [
+            { "@type": "EducationalOccupationalCredential", "credentialCategory": "professional certification", "name": "RDMS Abdomen" },
+            { "@type": "EducationalOccupationalCredential", "credentialCategory": "professional certification", "name": "RVT Vascular" },
+            { "@type": "EducationalOccupationalCredential", "credentialCategory": "professional certification", "name": "HHA New York State" },
+            { "@type": "EducationalOccupationalCredential", "credentialCategory": "degree", "name": "MD General Surgery" }
+        ]
+    }
+    </script>
+    <style>
+        :root {
+            --bg-surgery: #1a252f; 
+            --bg-sonography: #2471a3; 
+            --bg-aesthetic: #7d3c98; 
+            --text-light: #ffffff;
+            --transition-speed: 0.6s;
+        }
+
+        body, html {
+            margin: 0; padding: 0;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f4f7f6; color: #333;
+            scroll-behavior: smooth;
+        }
+
+        .lang-toggle {
+            position: fixed; top: 20px; right: 20px;
+            background: rgba(0, 0, 0, 0.6); color: white;
+            padding: 8px 16px; border-radius: 25px;
+            cursor: pointer; z-index: 1000; font-weight: bold;
+            backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.3);
+            transition: 0.3s;
+        }
+        .lang-toggle:hover { background: rgba(0, 0, 0, 0.8); }
+
+        .hero-banner {
+            height: 65vh; display: flex; flex-direction: column;
+            justify-content: center; align-items: center;
+            text-align: center; transition: all var(--transition-speed) ease;
+            color: var(--text-light); background-color: var(--bg-surgery);
+            padding: 40px; position: relative;
+            background-size: cover; background-position: center;
+        }
+
+        .hero-banner h1 { font-size: 3.5rem; margin-bottom: 15px; font-weight: 300; position: relative; z-index: 2; }
+        .hero-banner p { font-size: 1.25rem; max-width: 800px; line-height: 1.6; opacity: 0.95; position: relative; z-index: 2; }
+        .hero-banner a { color: var(--text-light); text-decoration: underline; opacity: 0.9; transition: opacity 0.3s; }
+        .hero-banner a:hover { opacity: 1; text-decoration: none; }
+
+        .tab-container { display: flex; height: 15vh; width: 100%; background: #fff; }
+
+        .tab {
+            flex: 1; display: flex; justify-content: center; align-items: center;
+            cursor: pointer; transition: all 0.4s ease;
+            color: white; text-transform: uppercase;
+            font-size: 0.9rem; font-weight: 700; letter-spacing: 2px; text-align: center;
+        }
+
+        .tab:hover { filter: brightness(1.2); flex: 1.2; }
+
+        #tab-surgery { background-color: var(--bg-surgery); }
+        #tab-sonography { background-color: var(--bg-sonography); }
+        #tab-aesthetic { background-color: var(--bg-aesthetic); }
+
+        .manifesto {
+            padding: 50px 20px; max-width: 900px; margin: 0 auto;
+            display: flex; align-items: center; gap: 40px; flex-wrap: wrap;
+        }
+        .manifesto-headshot {
+            flex: 0 0 200px; width: 200px; height: 200px;
+            border-radius: 50%; object-fit: cover; border: 4px solid #eee;
+        }
+        .manifesto-text { flex: 1; min-width: 280px; }
+        .manifesto h2 { font-size: 1.75rem; color: #2c3e50; margin-bottom: 16px; }
+        .manifesto p { font-size: 1.05rem; line-height: 1.75; color: #555; margin: 0; }
+
+        .publications-section {
+            padding: 50px 20px; max-width: 1000px; margin: 0 auto;
+        }
+        .publications-section h2 {
+            text-align: center; font-size: 2rem; color: #2c3e50; margin-bottom: 40px;
+        }
+        .pub-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;
+        }
+        .pub-card {
+            background: #fff; padding: 25px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--bg-surgery); transition: transform 0.3s ease;
+        }
+        .pub-card:hover {
+            transform: translateY(-5px);
+        }
+        .pub-card h3 { font-size: 1.2rem; color: #2c3e50; margin: 0 0 10px 0; }
+        .pub-date { font-size: 0.85rem; color: #7f8c8d; margin-bottom: 15px; font-weight: bold; }
+        .pub-desc { font-size: 0.95rem; color: #555; line-height: 1.6; margin-bottom: 20px; }
+        .read-more-btn {
+            display: inline-block; padding: 8px 16px; border: 1px solid var(--bg-surgery);
+            color: var(--bg-surgery); text-decoration: none; border-radius: 4px;
+            font-weight: 600; font-size: 0.9rem; transition: all 0.3s;
+        }
+        .read-more-btn:hover {
+            background: var(--bg-surgery); color: white; text-decoration: none;
+        }
+
+        .contact-section {
+            padding: 40px 20px; max-width: 480px; margin: 0 auto; text-align: center;
+            background: #fff; border-top: 1px solid #eee;
+        }
+        .contact-section h2 { font-size: 1.4rem; color: #2c3e50; margin-bottom: 6px; }
+        .contact-section p { font-size: 0.9rem; color: #666; margin-bottom: 20px; }
+        .contact-section label { display: block; text-align: left; margin-bottom: 6px; font-weight: 600; color: #444; }
+        .contact-section input, .contact-section textarea {
+            width: 100%; padding: 10px 12px; margin-bottom: 16px;
+            border: 1px solid #ddd; border-radius: 6px; font-size: 1rem; font-family: inherit;
+            box-sizing: border-box;
+        }
+        .contact-section textarea { min-height: 100px; resize: vertical; }
+        .contact-section input:focus, .contact-section textarea:focus {
+            outline: none; border-color: #3498db; box-shadow: 0 0 0 2px rgba(52,152,219,0.15);
+        }
+        .contact-section button {
+            width: 100%; padding: 12px; background: #3498db; color: white; border: none;
+            border-radius: 6px; font-size: 1rem; font-weight: 600; cursor: pointer; transition: background 0.3s;
+        }
+        .contact-section button:hover { background: #2980b9; }
+
+        .footer {
+            background: #1a1a1a; color: #bdc3c7;
+            padding: 40px 20px; text-align: center;
+            border-top: 4px solid #34495e;
+        }
+        .footer h3 { color: white; margin-bottom: 10px; }
+        .footer a { color: #3498db; text-decoration: none; }
+        .footer .cta-btn {
+            display: inline-block; margin-top: 15px; padding: 10px 24px;
+            background: #3498db; color: white; border-radius: 6px; font-weight: 600;
+            text-decoration: none; transition: background 0.3s;
+        }
+        .footer .cta-btn:hover { background: #2980b9; color: white; }
+
+        @media (max-width: 768px) {
+            .hero-banner h1 { font-size: 2.2rem; }
+            .tab-container { flex-direction: column; height: auto; }
+            .tab { padding: 30px; }
+            .manifesto { flex-direction: column; padding: 40px 20px; }
+            .manifesto-headshot { flex: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="lang-toggle" onclick="toggleLanguage()" id="langBtn">ESPAÑOL</div>
+
+    <section class="hero-banner" id="banner">
+        <h1 id="banner-title">General Surgery</h1>
+        <p id="banner-desc">Physician, Board-Certified General Surgeon (Venezuela) with a clinical record of over 1,000 successful procedures. My Venezuelan medical degree and General Surgery specialization are equivalent to an MD degree in the United States, as validated by Carnegie Evaluations. Expertise encompasses elective, emergency, and advanced laparoscopic surgeries.</p>
+        <p id="banner-credential" style="font-size: 1rem; margin-top: 15px; opacity: 0.9;"></p>
+    </section>
+
+    <div class="tab-container">
+        <div class="tab" id="tab-surgery" onclick="switchTab('surgery')">
+            <span id="tab-label-1">General Surgery</span>
+        </div>
+        <div class="tab" id="tab-sonography" onclick="switchTab('sonography')">
+            <span id="tab-label-2">Sonography</span>
+        </div>
+        <div class="tab" id="tab-aesthetic" onclick="switchTab('aesthetic')">
+            <span id="tab-label-3">Aesthetics & Care</span>
+        </div>
+    </div>
+
+    <section class="manifesto">
+        <img src="headshot.jpg" alt="Samuel Galviz, MD" class="manifesto-headshot" id="headshot-img" onerror="this.style.display='none'">
+        <div class="manifesto-text">
+        <h2 id="manifesto-title">Professional Philosophy</h2>
+        <p id="manifesto-text">
+            My career is built on the pillars of rigorous study, surgical precision, and unwavering patient commitment. As a surgeon, I view diagnostic sonography not just as a test, but as a powerful, first-line clinical tool. Currently transitioning into the U.S. healthcare system via the USMLE, I bridge the gap between surgery and specialized care. My patients benefit from "surgical hands" and deep anatomical insights, whether in aesthetic medicine or high-fidelity patient coordination.
+        </p>
+        </div>
+    </section>
+
+    <section class="publications-section" id="publications">
+        <h2>Clinical Publications & Case Studies</h2>
+        <div class="pub-grid">
+            <div class="pub-card">
+                <h3>Acute Appendicitis: A Deeper Look</h3>
+                <p class="pub-date">January 2026</p>
+                <p class="pub-desc">An evidence-based review of acute appendicitis diagnosis, focusing on early sonographic detection and surgical intervention protocols.</p>
+                <a href="apendicitis-aguda.html" class="read-more-btn">Read Full Case</a>
+            </div>
+            <div class="pub-card">
+                <h3>Mini-Laparoscopy: A New Era</h3>
+                <p class="pub-date">December 2025</p>
+                <p class="pub-desc">Exploring patient outcomes and recovery times utilizing advanced mini-laparoscopic techniques in elective general surgery.</p>
+                <a href="mini-laparoscopia.html" class="read-more-btn">Read Full Case</a>
+            </div>
+            <div class="pub-card">
+                <h3>Abdominal Pain Diagnostics</h3>
+                <p class="pub-date">December 2025</p>
+                <p class="pub-desc">A comprehensive clinical guide to triaging and diagnosing acute abdominal pain utilizing focused, high-resolution ultrasound.</p>
+                <a href="dolor-abdominal.html" class="read-more-btn">Read Full Case</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+        <h2 id="contact-title">Get in touch</h2>
+        <p id="contact-subtitle">Send a message and I’ll get back to you as soon as possible.</p>
+        <form action="https://formspree.io/f/xykddqkq" method="POST">
+            <label for="name" id="form-label-name">Name</label>
+            <input type="text" id="name" name="name" required placeholder="Your name">
+            <label for="email" id="form-label-email">Email</label>
+            <input type="email" id="email" name="email" required placeholder="your@email.com">
+            <label for="msg" id="form-label-message">Message</label>
+            <textarea id="msg" name="message" required placeholder="Your message"></textarea>
+            <button type="submit" id="form-submit">Send message</button>
+        </form>
+    </section>
+
+    <footer class="footer">
+        <h3 id="footer-name">Samuel Galviz, MD</h3>
+        <p id="footer-certs">RDMS (Abdomen) | RVT (Vascular)</p>
+        <p id="footer-loc">Based in Brooklyn, New York</p>
+        <p style="margin-top: 20px;">
+            <a href="mailto:samuel.galviz@gmail.com" id="footer-email">samuel.galviz@gmail.com</a>
+            <span style="opacity: 0.6;"> · </span>
+            <a href="https://www.linkedin.com/in/samuelgalviz/" target="_blank">LinkedIn</a>
+            <span style="opacity: 0.6;"> · </span>
+            <a href="Samuel-Galviz-CV.pdf" target="_blank">Download CV</a>
+        </p>
+    </footer>
+
+    <script>
+        var currentLang = 'EN';
+        var currentCategory = 'surgery';
+
+        var data = {
+            EN: {
+                surgery: {
+                    title: "General Surgery",
+                    desc: "Physician, Board-Certified General Surgeon (Venezuela) with a clinical record of over 1,000 procedures. My Venezuelan medical degree and General Surgery specialization are equivalent to an MD degree in the United States, as validated by Carnegie Evaluations. Expertise encompasses elective, emergency, and advanced laparoscopic surgeries.",
+                    credential: "MD credential evaluation: <a href='Mr. Samuel Uzcategui (AE).pdf' target='_blank' style='color: inherit; text-decoration: underline;'>Carnegie Evaluations Certificate</a>",
+                    color: "#1a252f",
+                    image: "url('surgery.jpg')"
+                },
+                sonography: {
+                    title: "Diagnostic Sonography",
+                    desc: "Credentialed Sonographer (RDMS Abdomen, RVT Vascular). Integrating surgical anatomy knowledge with high-resolution imaging to provide critical early diagnostic insights.",
+                    credential: "Verify credentials: <a href='https://www.ardms.org/maintain-certification/registrant-support/statusverification/' target='_blank' style='color: inherit; text-decoration: underline;'>ARDMS Status Verification</a> (Search by name: Samuel Galviz or ARDMS ID: 322825)",
+                    color: "#2471a3",
+                    image: "url('sonography.jpg')"
+                },
+                aesthetic: {
+                    title: "Aesthetics & Care",
+                    desc: "Advanced Medical Aesthetics and Specialized Patient Care Coordination. Certified Home Health Aide (HHA) in New York State. Leveraging surgical precision for evidence-based aesthetic procedures and high-fidelity clinical monitoring.",
+                    credential: "",
+                    color: "#7d3c98",
+                    image: "url('aesthetic.jpg')"
+                },
+                manifestoTitle: "Professional Philosophy",
+                manifestoText: "My career is built on the pillars of rigorous study, surgical precision, and unwavering patient commitment. As a surgeon, I view diagnostic sonography not just as a test, but as a powerful, first-line clinical tool. Currently transitioning into the U.S. healthcare system via the USMLE, I bridge the gap between surgery and specialized care. My patients benefit from 'surgical hands' and deep anatomical insights, whether in aesthetic medicine or high-fidelity patient coordination.",
+                tabs: ["General Surgery", "Sonography", "Aesthetics & Care"],
+                contactTitle: "Get in touch",
+                contactSubtitle: "Send a message and I'll get back to you as soon as possible.",
+                formName: "Name", formEmail: "Email", formMessage: "Message",
+                formPlaceholderName: "Your name", formPlaceholderEmail: "your@email.com", formPlaceholderMessage: "Your message",
+                formSubmit: "Send message"
+            },
+            ES: {
+                surgery: {
+                    title: "Cirugía General",
+                    desc: "Médico, Especialista en Cirugía General Certificado (Venezuela) con un registro clínico de más de 1,000 procedimientos. Mi título médico venezolano y especialización en Cirugía General equivalen a un grado MD en Estados Unidos, validado por Carnegie Evaluations. Experiencia en cirugías electivas, de emergencia y laparoscópicas avanzadas.",
+                    credential: "Evaluación de credenciales MD: <a href='Mr. Samuel Uzcategui (AE).pdf' target='_blank' style='color: inherit; text-decoration: underline;'>Certificado de Carnegie Evaluations</a>",
+                    color: "#1a252f",
+                    image: "url('surgery.jpg')"
+                },
+                sonography: {
+                    title: "Ecografía Diagnóstica",
+                    desc: "Ecografista acreditado (RDMS Abdomen, RVT Vascular). Integrando conocimientos de anatomía quirúrgica con imágenes de alta resolución para diagnósticos críticos.",
+                    credential: "Verificar credenciales: <a href='https://www.ardms.org/maintain-certification/registrant-support/statusverification/' target='_blank' style='color: inherit; text-decoration: underline;'>Verificación de Estado ARDMS</a> (Buscar por nombre: Samuel Galviz o ID ARDMS: 322825)",
+                    color: "#2471a3",
+                    image: "url('sonography.jpg')"
+                },
+                aesthetic: {
+                    title: "Estética y Cuidados",
+                    desc: "Estética Médica Avanzada y Coordinación Especializada de Cuidados al Paciente. Certificado como Home Health Aide (HHA) en el Estado de Nueva York. Aplicando precisión quirúrgica en procedimientos estéticos y monitoreo clínico de alta fidelidad.",
+                    credential: "",
+                    color: "#7d3c98",
+                    image: "url('aesthetic.jpg')"
+                },
+                manifestoTitle: "Filosofía Profesional",
+                manifestoText: "Mi carrera se basa en el estudio riguroso, la precisión quirúrgica y el compromiso inquebrantable con el paciente. Como cirujano, veo la ecografía diagnóstica no solo como una prueba, sino como una potente herramienta clínica de primera línea. Actualmente en transición al sistema de salud de EE. UU. mediante el USMLE, cierro la brecha entre la cirugía y los cuidados especializados. Mis pacientes se benefician de 'manos entrenadas' y profundos conocimientos anatómicos.",
+                tabs: ["Cirugía General", "Ecografía", "Estética y Cuidados"],
+                contactTitle: "Escríbeme",
+                contactSubtitle: "Envía un mensaje y te responderé lo antes posible.",
+                formName: "Nombre", formEmail: "Correo electrónico", formMessage: "Mensaje",
+                formPlaceholderName: "Tu nombre", formPlaceholderEmail: "tu@correo.com", formPlaceholderMessage: "Tu mensaje",
+                formSubmit: "Enviar mensaje"
+            }
+        };
+
+        function switchTab(category) {
+            currentCategory = category;
+            var banner = document.getElementById('banner');
+            var title = document.getElementById('banner-title');
+            var desc = document.getElementById('banner-desc');
+            var credential = document.getElementById('banner-credential');
+            
+            var categoryData = data[currentLang][category];
+
+            banner.style.backgroundColor = categoryData.color;
+            banner.style.backgroundImage = "linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), " + categoryData.image;
+            
+            title.innerText = categoryData.title;
+            desc.innerText = categoryData.desc;
+            credential.innerHTML = categoryData.credential || "";
+        }
+
+        function toggleLanguage() {
+            currentLang = (currentLang === 'EN') ? 'ES' : 'EN';
+            document.getElementById('langBtn').innerText = (currentLang === 'EN') ? 'ESPAÑOL' : 'ENGLISH';
+            
+            switchTab(currentCategory);
+            
+            document.getElementById('manifesto-title').innerText = data[currentLang].manifestoTitle;
+            document.getElementById('manifesto-text').innerText = data[currentLang].manifestoText;
+            document.getElementById('tab-label-1').innerText = data[currentLang].tabs[0];
+            document.getElementById('tab-label-2').innerText = data[currentLang].tabs[1];
+            document.getElementById('tab-label-3').innerText = data[currentLang].tabs[2];
+
+            var d = data[currentLang];
+            document.getElementById('contact-title').innerText = d.contactTitle;
+            document.getElementById('contact-subtitle').innerText = d.contactSubtitle;
+            document.getElementById('form-label-name').innerText = d.formName;
+            document.getElementById('form-label-email').innerText = d.formEmail;
+            document.getElementById('form-label-message').innerText = d.formMessage;
+            document.getElementById('name').placeholder = d.formPlaceholderName;
+            document.getElementById('email').placeholder = d.formPlaceholderEmail;
+            document.getElementById('msg').placeholder = d.formPlaceholderMessage;
+            document.getElementById('form-submit').innerText = d.formSubmit;
+        }
+
+        window.onload = function() {
+            switchTab('surgery');
+            document.getElementById('langBtn').innerText = 'ESPAÑOL';
+            document.getElementById('manifesto-title').innerText = data.EN.manifestoTitle;
+            document.getElementById('manifesto-text').innerText = data.EN.manifestoText;
+            document.getElementById('tab-label-1').innerText = data.EN.tabs[0];
+            document.getElementById('tab-label-2').innerText = data.EN.tabs[1];
+            document.getElementById('tab-label-3').innerText = data.EN.tabs[2];
+            var d = data.EN;
+            document.getElementById('contact-title').innerText = d.contactTitle;
+            document.getElementById('contact-subtitle').innerText = d.contactSubtitle;
+            document.getElementById('form-label-name').innerText = d.formName;
+            document.getElementById('form-label-email').innerText = d.formEmail;
+            document.getElementById('form-label-message').innerText = d.formMessage;
+            document.getElementById('name').placeholder = d.formPlaceholderName;
+            document.getElementById('email').placeholder = d.formPlaceholderEmail;
+            document.getElementById('msg').placeholder = d.formPlaceholderMessage;
+            document.getElementById('form-submit').innerText = d.formSubmit;
+        };
+    </script>
+</body>
+</html>

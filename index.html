@@ -1,0 +1,1731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Samuel Galviz, MD | Clinical Portfolio</title>
+  <meta name="description" content="Samuel D. Galviz, MD – Board-Certified General Surgeon, Sonographer (RDMS-AB, RVT), Registered Medical Assistant (RMA), and Home Health Aide (HHA). Brooklyn, NY.">
+  <link rel="canonical" href="https://drsamuelgalviz.com/">
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org","@type":"Person",
+    "name":"Samuel D. Galviz","jobTitle":"Physician, Sonographer, Medical Assistant, HHA",
+    "email":"samuel.galviz@gmail.com","url":"https://drsamuelgalviz.com",
+    "address":{"@type":"PostalAddress","addressLocality":"Brooklyn","addressRegion":"NY","addressCountry":"US"},
+    "hasCredential":[
+      {"@type":"EducationalOccupationalCredential","name":"RDMS-AB"},
+      {"@type":"EducationalOccupationalCredential","name":"RVT"},
+      {"@type":"EducationalOccupationalCredential","name":"RMA"},
+      {"@type":"EducationalOccupationalCredential","name":"HHA"},
+      {"@type":"EducationalOccupationalCredential","name":"MD General Surgery"}
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+  /* ================================================================
+     RESET & CUSTOM PROPERTIES
+  ================================================================ */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg:          #060c1a;
+    --bg-card:     rgba(10, 20, 45, 0.78);
+    --bg-raised:   rgba(255,255,255,0.055);
+    --border:      rgba(255,255,255,0.055);
+    --border-hi:   rgba(255,255,255,0.10);
+    --text:        #dce9f8;
+    --text-muted:  #6b8fb4;
+    --text-subtle: #374f6b;
+
+    /* Refined cerulean — medical authority, not neon */
+    --accent:      #3b91cc;
+    --accent-dim:  #2d73a8;
+    --accent-glow: rgba(59,145,204,0.18);
+
+    /* Warm gold — credentials, honors */
+    --gold:        #c8a45a;
+    --gold-glow:   rgba(200,164,90,0.15);
+
+    /* Specialty panel colors */
+    --c-surgery:    #0a1828;
+    --c-sono:       #091e3a;
+    --c-allied:     #081c14;
+
+    /* Floating card shadows — light & glow-based, not heavy-dark */
+    --shadow-card:       inset 0 1px 0 rgba(255,255,255,0.12), 0 0 0 1px rgba(255,255,255,0.07), 0 4px 14px rgba(0,0,0,0.18), 0 12px 30px rgba(0,0,0,0.10);
+    --shadow-card-hover: inset 0 1px 0 rgba(255,255,255,0.18), 0 0 0 1px rgba(255,255,255,0.11), 0 8px 22px rgba(0,0,0,0.22), 0 20px 44px rgba(0,0,0,0.14);
+
+    --radius:    20px;
+    --radius-sm: 12px;
+    --t:    0.30s ease;
+    --t-hero: 0.55s ease;
+    --header-h: 62px;
+  }
+
+  html { scroll-behavior: smooth; font-size: 16px; }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background:
+      radial-gradient(ellipse 70% 55% at 15% 25%, rgba(30, 80, 140, 0.18) 0%, transparent 65%),
+      radial-gradient(ellipse 55% 40% at 85% 75%, rgba(59, 145, 204, 0.09) 0%, transparent 55%),
+      radial-gradient(ellipse 40% 30% at 55% 50%, rgba(10, 30, 65, 0.30) 0%, transparent 70%),
+      linear-gradient(158deg, #060c1a 0%, #0b1832 50%, #050a14 100%);
+    background-attachment: fixed;
+    color: var(--text);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+  }
+  /* background-attachment: fixed repaints a frame behind the scroll on touch
+     browsers (iOS Safari, etc.), making the About photo appear to lag/jump as
+     it fades into the background. Use scroll attachment on touch devices. */
+  @media (hover: none) and (pointer: coarse) {
+    body { background-attachment: scroll; }
+  }
+
+  a { color: var(--accent); text-decoration: none; transition: color var(--t); }
+  a:hover { color: #6bbce8; }
+  img { display: block; max-width: 100%; }
+
+  /* ================================================================
+     UTILITY
+  ================================================================ */
+  .wrap { max-width: 1100px; margin: 0 auto; padding: 0 28px; }
+
+  .sec-title { font-family: 'Playfair Display', Georgia, serif; font-size: 1.85rem; font-weight: 600; color: var(--text); margin-bottom: 6px; letter-spacing: -0.01em; }
+  .sec-sub   { font-size: 0.90rem; color: var(--text-muted); margin-bottom: 38px; letter-spacing: 0.01em; }
+
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 7px;
+    padding: 12px 28px; background: var(--accent); color: #fff;
+    font-weight: 600; font-size: 0.90rem; border-radius: 50px;
+    border: none; cursor: pointer; transition: all var(--t);
+    box-shadow: 0 4px 18px var(--accent-glow), 0 0 0 1px rgba(59,145,204,0.3);
+    letter-spacing: 0.02em;
+  }
+  .btn-primary:hover { background: #4fa8e0; color: #fff; transform: translateY(-2px); box-shadow: 0 8px 28px rgba(59,145,204,0.42), 0 0 0 1px rgba(79,168,224,0.4); }
+
+  .btn-outline {
+    display: inline-flex; align-items: center; gap: 7px;
+    padding: 11px 24px; background: rgba(255,255,255,0.04);
+    color: var(--text); font-weight: 500; font-size: 0.90rem; border-radius: 50px;
+    border: 1px solid rgba(255,255,255,0.12); cursor: pointer; transition: all var(--t);
+    backdrop-filter: blur(12px); letter-spacing: 0.02em;
+  }
+  .btn-outline:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-glow); transform: translateY(-2px); }
+
+  .btn-sm {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 8px 16px; background: var(--bg-raised); color: var(--text-muted);
+    font-size: 0.82rem; font-weight: 500; border-radius: 10px;
+    border: 1px solid var(--border); cursor: pointer; transition: all var(--t);
+    text-decoration: none;
+  }
+  .btn-sm:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* Glass card base */
+  .glass {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    backdrop-filter: blur(18px) saturate(160%);
+    -webkit-backdrop-filter: blur(18px) saturate(160%);
+  }
+
+  /* ================================================================
+     HEADER
+  ================================================================ */
+  #site-header {
+    position: fixed; top: 0; left: 0; right: 0; height: var(--header-h);
+    background: rgba(6,17,30,0.80);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border-bottom: 1px solid var(--border);
+    z-index: 1000;
+  }
+  .hdr-inner {
+    max-width: 1100px; margin: 0 auto; padding: 0 28px;
+    height: 100%; display: flex; align-items: center; gap: 20px;
+  }
+  .hdr-logo { display: flex; flex-direction: column; gap: 1px; }
+  .hdr-name { font-size: 0.97rem; font-weight: 700; color: var(--text); white-space: nowrap; }
+  .hdr-creds { font-size: 0.68rem; font-weight: 500; color: var(--text-muted); letter-spacing: 0.05em; }
+  .hdr-nav { display: flex; gap: 26px; margin-left: auto; }
+  .hdr-nav a { font-size: 0.875rem; font-weight: 500; color: var(--text-muted); transition: color var(--t); }
+  .hdr-nav a:hover { color: var(--text); }
+  .lang-btn {
+    padding: 6px 14px; border-radius: 20px;
+    background: transparent; border: 1px solid var(--border-hi);
+    color: var(--text-muted); font-size: 0.78rem; font-weight: 700;
+    cursor: pointer; font-family: inherit; transition: all var(--t); letter-spacing: .06em;
+  }
+  .lang-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* ================================================================
+     HERO
+  ================================================================ */
+  #hero {
+    position: relative; min-height: 88vh;
+    display: flex; flex-direction: column; justify-content: space-between;
+    padding: calc(var(--header-h) + 56px) 28px 0;
+    background-color: var(--c-surgery);
+    transition: background-color 0.45s ease;
+    overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute; inset: 0; z-index: 0;
+    background-size: cover; background-position: center;
+    filter: blur(3px) saturate(0.6); transform: scale(1.1); opacity: 0.32;
+    animation: hero-drift 26s ease-in-out infinite alternate paused;
+    transition: opacity 0.22s ease;
+  }
+  .hero-bg.animate {
+    animation-play-state: running;
+  }
+  @keyframes hero-drift {
+    0%   { transform: scale(1.10) translate(0,0); }
+    100% { transform: scale(1.12) translate(-0.6%,-0.4%); }
+  }
+  @media (prefers-reduced-motion: reduce) { .hero-bg { animation: none; } }
+  .hero-overlay {
+    position: absolute; inset: 0; z-index: 1;
+    background: linear-gradient(165deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.22) 100%);
+  }
+
+  .hero-content {
+    position: relative; z-index: 2;
+    max-width: 1100px; margin: 0 auto; width: 100%;
+    display: flex; align-items: center; gap: 56px;
+  }
+  .hero-avatar {
+    flex-shrink: 0; width: 176px; height: 176px; border-radius: 50%;
+    overflow: hidden; border: 2px solid rgba(255,255,255,0.18);
+    background: rgba(255,255,255,0.06);
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 0 0 8px rgba(59,145,204,0.06), 0 0 50px rgba(0,0,0,0.45);
+  }
+  .hero-avatar img { width: 100%; height: 100%; object-fit: cover; }
+  .avatar-init { font-size: 2.1rem; font-weight: 700; color: rgba(255,255,255,0.45); display: none; }
+  .hero-avatar.no-photo img { display: none; }
+  .hero-avatar.no-photo .avatar-init { display: block; }
+
+  .hero-text { flex: 1; min-height: 280px; display: flex; flex-direction: column; justify-content: flex-start; }
+  .hero-eyebrow {
+    font-size: 0.8rem; font-weight: 700; letter-spacing: .14em;
+    text-transform: uppercase; color: var(--accent); margin-bottom: 10px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .hero-eyebrow::before { content: ''; display: block; width: 24px; height: 2px; background: var(--accent); border-radius: 2px; }
+  #hero h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(2rem, 5.2vw, 4.6rem); font-weight: 600;
+    line-height: 1.06; color: #fff; margin-bottom: 14px;
+    letter-spacing: -0.025em;
+  }
+  .hero-creds-line { font-size: 0.95rem; font-weight: 500; color: rgba(255,255,255,0.65); letter-spacing: .06em; margin-bottom: 16px; }
+  .hero-desc { font-size: 1rem; line-height: 1.72; color: rgba(255,255,255,0.82); max-width: 620px; margin-bottom: 8px; height: 168px; overflow: hidden; }
+  .hero-cred-link { font-size: 0.88rem; color: rgba(255,255,255,0.55); margin-bottom: 28px; min-height: 1.65em; }
+  .hero-cred-link a { color: rgba(255,255,255,0.8); text-decoration: underline; }
+  .hero-cred-link a:hover { color: #fff; }
+  .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+
+  /* Stats bar */
+  .hero-stats {
+    position: relative; z-index: 2;
+    max-width: 1100px; margin: 0 auto; width: 100%;
+    display: flex; border-top: 1px solid rgba(255,255,255,0.1);
+  }
+  .hero-stat { flex: 1; padding: 18px 22px; border-right: 1px solid rgba(255,255,255,0.1); }
+  .hero-stat:last-child { border-right: none; }
+  .stat-n { display: block; font-family: 'Playfair Display', Georgia, serif; font-size: 1.6rem; font-weight: 600; color: #fff; line-height: 1.1; }
+  .stat-l { display: block; font-size: 0.73rem; color: rgba(255,255,255,0.45); margin-top: 4px; font-weight: 400; letter-spacing: 0.02em; }
+
+  /* ================================================================
+     ROLE TABS
+  ================================================================ */
+  #roles {
+    display: flex;
+    background: rgba(5,10,22,0.94);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+  .role-card {
+    flex: 1; display: flex; align-items: center; gap: 14px;
+    padding: 16px 22px; cursor: pointer;
+    border-top: 2px solid transparent;
+    border-right: 1px solid rgba(255,255,255,0.04);
+    transition: all var(--t);
+  }
+  .role-card:last-child { border-right: none; }
+  .role-card:hover { background: rgba(255,255,255,0.03); }
+
+  .role-card.active-surgery    { border-top-color: #5b9fd4; background: rgba(91,159,212,0.07); }
+  .role-card.active-sonography { border-top-color: var(--accent); background: rgba(59,145,204,0.07); }
+  .role-card.active-allied     { border-top-color: #3ec98a; background: rgba(62,201,138,0.06); }
+
+  .role-icon {
+    width: 36px; height: 36px; border-radius: 10px;
+    background: rgba(255,255,255,0.05); flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    transition: background var(--t);
+  }
+  .role-card.active-surgery    .role-icon { background: rgba(91,159,212,0.16); }
+  .role-card.active-sonography .role-icon { background: rgba(59,145,204,0.14); }
+  .role-card.active-allied     .role-icon { background: rgba(62,201,138,0.13); }
+
+  .tab-icon-img { width: 22px; height: 22px; object-fit: contain; }
+  .icon-fb { font-size: 1.1rem; }
+
+  .role-title { font-size: 0.9rem; font-weight: 600; color: var(--text-muted); transition: color var(--t); }
+  .role-sub   { font-size: 0.74rem; color: var(--text-subtle); margin-top: 2px; }
+  .role-card.active-surgery .role-title,
+  .role-card.active-sonography .role-title,
+  .role-card.active-allied .role-title { color: var(--text); }
+
+  /* ================================================================
+     CREDENTIALS — HORIZONTAL SCROLL
+  ================================================================ */
+  #credentials { padding: 76px 0; }
+
+  .cred-scroll-outer { position: relative; }
+
+  .cred-scroll {
+    /* Small left inset matching the right edge gap of the last card */
+    --cred-inset: 28px;
+    display: flex; gap: 14px;
+    overflow-x: auto; scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    /* Extra top/bottom padding so the hover glow isn't clipped by the scroll
+       container; negative margin-top keeps the cards at the same visual spot. */
+    margin-top: -40px;
+    padding: 64px 28px 44px var(--cred-inset);
+    /* Without this, mandatory snap scrolls the first card flush to the edge,
+       eating the left inset — scroll-padding keeps the snap inside the margin. */
+    scroll-padding-left: var(--cred-inset);
+    scrollbar-width: none; -ms-overflow-style: none;
+    cursor: grab;
+  }
+  /* First card aligns with the centered section title via the padding-left above */
+  .cred-scroll .cred-card:first-child {
+    margin-left: 0;
+  }
+  @media (max-width: 700px) {
+    .cred-scroll .cred-card:first-child {
+      margin-left: 0;
+    }
+  }
+  .cred-scroll:active { cursor: grabbing; }
+  .cred-scroll::-webkit-scrollbar { display: none; }
+
+  .cred-card {
+    flex-shrink: 0; width: 268px;
+    scroll-snap-align: start;
+    background: rgba(28, 52, 105, 0.28);
+    backdrop-filter: blur(24px) saturate(160%);
+    -webkit-backdrop-filter: blur(24px) saturate(160%);
+    border-radius: 18px;
+    padding: 22px 20px;
+    display: flex; flex-direction: column; gap: 5px;
+    position: relative;
+    box-shadow: var(--shadow-card);
+    transition: transform 0.36s cubic-bezier(0.4,0,0.2,1),
+                box-shadow 0.36s cubic-bezier(0.4,0,0.2,1),
+                background 0.36s ease;
+  }
+  /* Top surface reflection line */
+  .cred-card::before {
+    content: '';
+    position: absolute; top: 0; left: 10%; right: 10%; height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.40), transparent);
+    pointer-events: none;
+  }
+  /* Watermark abbreviation */
+  .cred-card::after {
+    content: attr(data-abbr);
+    position: absolute; bottom: -8px; right: 10px;
+    font-size: 4.2rem; font-weight: 900; line-height: 1;
+    color: rgba(255,255,255,0.045); pointer-events: none; user-select: none;
+    font-family: 'Inter', sans-serif; letter-spacing: -0.03em;
+  }
+  .cred-card.surgery    { --cat-glow: rgba(91,159,212,0.20); }
+  .cred-card.sonography { --cat-glow: rgba(59,145,204,0.22); }
+  .cred-card.allied     { --cat-glow: rgba(62,201,138,0.18); }
+  .cred-card.aesthetic  { --cat-glow: rgba(176,122,237,0.20); }
+
+  .cred-card:hover {
+    background: rgba(35, 65, 125, 0.38);
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-card-hover), 0 0 50px var(--cat-glow, rgba(59,145,204,0.18));
+  }
+
+  .cred-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 2px; }
+  .cred-abbr { font-size: 1.3rem; font-weight: 800; color: var(--text); letter-spacing: .03em; }
+  .cred-flag {
+    font-size: 0.68rem; font-weight: 700; letter-spacing: .08em;
+    color: rgba(255,255,255,0.6);
+    padding: 3px 8px; border-radius: 6px;
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+  .cred-card h3 { font-size: 0.92rem; font-weight: 600; color: var(--text); line-height: 1.3; }
+  .cred-issuer { font-size: 0.8rem; color: var(--text-muted); }
+  .cred-detail { font-size: 0.77rem; color: var(--text-subtle); }
+  .cred-note   { font-size: 0.75rem; color: var(--text-subtle); font-style: italic; }
+  .cred-status { display: inline-flex; align-items: center; gap: 5px; font-size: 0.75rem; font-weight: 700; color: #4ade80; margin-top: 2px; }
+  .verify-btn {
+    display: inline-block; margin-top: 8px;
+    font-size: 0.8rem; font-weight: 600; color: var(--accent);
+    padding: 6px 13px; border: 1px solid rgba(59,145,204,0.28); border-radius: 8px;
+    transition: all var(--t); align-self: flex-start;
+  }
+  .verify-btn:hover { background: var(--accent-glow); border-color: var(--accent); color: #6bbce8; }
+
+  /* Scroll hint indicator */
+  .scroll-hint {
+    display: flex; align-items: center; gap: 8px;
+    font-size: 0.78rem; color: var(--text-subtle); margin-top: 6px; padding-left: 28px;
+  }
+  .scroll-hint span { display: flex; gap: 4px; }
+  .scroll-dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--border); transition: background 0.3s;
+  }
+  .scroll-dot.active { background: var(--accent); }
+
+  /* ================================================================
+     ABOUT — full 1/3 photo with bleed + mask
+  ================================================================ */
+  #about {
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    overflow: hidden;
+  }
+  .about-inner {
+    display: flex; align-items: stretch; min-height: 460px;
+  }
+
+  /* Photo panel — full 1/3 left */
+  .about-photo-panel {
+    width: 33%; flex-shrink: 0;
+    position: relative; overflow: hidden;
+    background: #081624;
+  }
+  .about-photo-panel img {
+    width: 100%; height: 100%;
+    object-fit: cover; object-position: center top;
+    opacity: 0.60;
+    mask-image: linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
+    -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
+    display: block; position: absolute; inset: 0;
+    transition: opacity 0.4s;
+  }
+  .about-photo-panel.no-photo img { opacity: 0; }
+  .about-ph-init {
+    position: absolute; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 5rem; font-weight: 700; color: rgba(255,255,255,0.10);
+  }
+  .about-photo-panel.has-photo .about-ph-init { display: none; }
+
+  /* About text */
+  .about-content {
+    flex: 1; padding: 56px 52px;
+    max-width: 700px;
+    display: flex; flex-direction: column; justify-content: center;
+  }
+  .about-content h2 { font-family: 'Playfair Display', Georgia, serif; font-size: 1.85rem; font-weight: 600; margin-bottom: 20px; color: var(--text); letter-spacing: -0.01em; }
+  .about-content p { font-size: 0.97rem; line-height: 1.82; color: var(--text-muted); margin-bottom: 14px; }
+  .about-links { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 20px; }
+
+  /* ================================================================
+     RESUME — compact trigger + slide-in panel
+  ================================================================ */
+  #resume { padding: 76px 0; }
+
+  .resume-cards {
+    display: flex; flex-direction: column; gap: 12px;
+    max-width: 520px; margin: 0 auto; /* centrado */
+  }
+  .resume-cta-card {
+    display: flex; align-items: center; gap: 20px;
+    padding: 22px 26px; cursor: pointer;
+    background: rgba(28, 52, 105, 0.26);
+    backdrop-filter: blur(22px) saturate(160%);
+    -webkit-backdrop-filter: blur(22px) saturate(160%);
+    border-radius: 16px;
+    box-shadow: var(--shadow-card);
+    transition: transform 0.34s cubic-bezier(0.4,0,0.2,1),
+                box-shadow 0.34s cubic-bezier(0.4,0,0.2,1),
+                background 0.34s ease;
+    position: relative; overflow: hidden;
+  }
+  .resume-cta-card::before {
+    content: '';
+    position: absolute; top: 0; left: 10%; right: 10%; height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.38), transparent);
+    pointer-events: none;
+  }
+  .resume-cta-card:hover {
+    background: rgba(35, 65, 125, 0.36);
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-card-hover), 0 0 44px rgba(59,145,204,0.16);
+  }
+  .rcc-icon { font-size: 2rem; flex-shrink: 0; }
+  .rcc-content { flex: 1; }
+  .rcc-title { font-size: 1rem; font-weight: 700; color: var(--text); margin-bottom: 3px; }
+  .rcc-sub   { font-size: 0.82rem; color: var(--text-muted); }
+  .rcc-arrow { color: var(--accent); font-size: 1.2rem; flex-shrink: 0; transition: transform var(--t); }
+  .resume-cta-card:hover .rcc-arrow { transform: translateX(4px); }
+
+  /* ---- Slide-in Panel ---- */
+  .rp-overlay {
+    position: fixed; inset: 0;
+    background: rgba(4,10,20,0.72);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    z-index: 1999; opacity: 0; pointer-events: none;
+    transition: opacity 0.35s ease;
+  }
+  .rp-overlay.open { opacity: 1; pointer-events: all; }
+
+  .rp-panel {
+    position: fixed; top: 0; right: 0; bottom: 0;
+    width: min(860px, 100vw);
+    background: rgba(8,18,32,0.96);
+    backdrop-filter: blur(24px) saturate(160%);
+    -webkit-backdrop-filter: blur(24px) saturate(160%);
+    border-left: 1px solid var(--border);
+    z-index: 2000;
+    transform: translateX(100%);
+    transition: transform 0.40s cubic-bezier(0.4,0,0.2,1);
+    display: flex; flex-direction: column;
+    overflow: hidden;
+  }
+  .rp-panel.open { transform: translateX(0); }
+
+  .rp-header {
+    display: flex; align-items: center; gap: 12px; flex-shrink: 0;
+    padding: 16px 24px; border-bottom: 1px solid var(--border);
+    background: rgba(6,17,30,0.7);
+  }
+  .rp-title { font-size: 1rem; font-weight: 700; color: var(--text); margin-right: auto; }
+  .rp-tabs { display: flex; background: rgba(255,255,255,0.05); border: 1px solid var(--border); border-radius: 8px; padding: 3px; }
+  .rp-tab {
+    padding: 6px 16px; border-radius: 6px; font-size: 0.82rem; font-weight: 600;
+    cursor: pointer; border: none; background: transparent; color: var(--text-muted);
+    font-family: inherit; transition: all var(--t);
+  }
+  .rp-tab.active { background: var(--accent); color: #04111e; }
+  .rp-close {
+    width: 34px; height: 34px; border-radius: 50%; background: rgba(255,255,255,0.07);
+    border: 1px solid var(--border); color: var(--text-muted);
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer; font-size: 1.1rem; transition: all var(--t);
+  }
+  .rp-close:hover { background: rgba(255,255,255,0.14); color: var(--text); }
+  .rp-actions { display: flex; gap: 6px; }
+
+  .rp-body { flex: 1; overflow-y: auto; }
+
+  /* ---- Resume layout inside panel ---- */
+  .rv-view { display: none; }
+  .rv-view.active { display: block; }
+
+  .rv-layout {
+    display: grid; grid-template-columns: 220px 1fr;
+    min-height: 100%;
+  }
+  .rv-sidebar {
+    background: rgba(255,255,255,0.025); border-right: 1px solid var(--border);
+    padding: 28px 20px; display: flex; flex-direction: column; gap: 24px;
+  }
+  .rv-photo img {
+    width: 100%; border-radius: 10px; aspect-ratio: 1;
+    object-fit: cover; border: 1px solid var(--border);
+  }
+  .rv-sh { font-size: 0.7rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); margin-bottom: 9px; padding-bottom: 5px; border-bottom: 1px solid rgba(59,145,204,0.20); }
+  .rv-sidebar p, .rv-sidebar li { font-size: 0.8rem; color: var(--text-muted); line-height: 1.6; }
+  .rv-sidebar ul { list-style: none; display: flex; flex-direction: column; gap: 3px; }
+  .rv-sidebar a { color: var(--text-muted); }
+  .rv-sidebar a:hover { color: var(--accent); }
+  .sk { display: inline-block; margin: 2px; padding: 3px 8px; border-radius: 5px; font-size: 0.72rem; color: var(--text-muted); background: rgba(59,145,204,0.08); border: 1px solid rgba(59,145,204,0.16); }
+
+  .rv-main { padding: 28px 32px; display: flex; flex-direction: column; gap: 24px; }
+  .rv-name h1 { font-family: 'Playfair Display', Georgia, serif; font-size: 1.7rem; font-weight: 600; color: var(--text); letter-spacing: -0.01em; }
+  .rv-name p  { font-size: 0.85rem; color: var(--text-muted); margin-top: 4px; letter-spacing: .05em; }
+
+  .rv-sec h3 { font-size: 0.69rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; padding-bottom: 5px; border-bottom: 1px solid rgba(59,145,204,0.20); }
+  .rv-item { margin-bottom: 14px; }
+  .rv-ihead { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; flex-wrap: wrap; margin-bottom: 3px; }
+  .rv-item h4 { font-size: 0.9rem; font-weight: 600; color: var(--text); }
+  .rv-org { font-size: 0.8rem; color: var(--text-muted); }
+  .rv-date { font-size: 0.76rem; color: var(--text-subtle); white-space: nowrap; flex-shrink: 0; }
+  .rv-note { font-size: 0.74rem; color: var(--text-subtle); font-style: italic; margin-top: 2px; }
+  .rv-item ul { list-style: none; margin-top: 5px; }
+  .rv-item li { font-size: 0.83rem; color: var(--text-muted); line-height: 1.65; padding-left: 12px; position: relative; margin-bottom: 3px; }
+  .rv-item li::before { content: '·'; position: absolute; left: 1px; color: var(--text-subtle); }
+  .rv-clist { list-style: none; }
+  .rv-clist li { font-size: 0.83rem; color: var(--text-muted); padding: 5px 0; border-bottom: 1px solid var(--border); line-height: 1.5; }
+  .rv-clist li:last-child { border-bottom: none; }
+  .rv-clist li strong { color: var(--text); }
+  .rv-sum p { font-size: 0.86rem; color: var(--text-muted); line-height: 1.78; }
+  .rv-ri { padding: 8px 0; border-bottom: 1px solid var(--border); }
+  .rv-ri:last-child { border-bottom: none; }
+  .rv-ri h4 { font-size: 0.84rem; font-weight: 600; color: var(--text); }
+  .rv-ri p  { font-size: 0.77rem; color: var(--text-muted); margin-top: 2px; }
+  .rv-ce { display: flex; justify-content: space-between; gap: 10px; padding: 7px 0; border-bottom: 1px solid var(--border); }
+  .rv-ce:last-child { border-bottom: none; }
+  .rv-ce-n { font-size: 0.83rem; font-weight: 500; color: var(--text); }
+  .rv-ce-o { font-size: 0.76rem; color: var(--text-muted); margin-top: 2px; }
+  .honor { background: rgba(250,204,21,0.06); border: 1px solid rgba(250,204,21,0.16); border-radius: 8px; padding: 10px 14px; margin-bottom: 8px; }
+  .honor h4 { font-size: 0.85rem; font-weight: 700; color: #fcd34d; }
+  .honor p  { font-size: 0.77rem; color: var(--text-muted); margin-top: 3px; }
+  .mbr-item { padding: 7px 0; border-bottom: 1px solid var(--border); }
+  .mbr-item:last-child { border-bottom: none; }
+  .mbr-item h4 { font-size: 0.84rem; font-weight: 600; color: var(--text); }
+  .mbr-item p  { font-size: 0.77rem; color: var(--text-muted); margin-top: 2px; }
+
+  /* ================================================================
+     CONTACT
+  ================================================================ */
+  #contact {
+    padding: 76px 0;
+    background: var(--bg-card);
+    border-top: 1px solid var(--border);
+  }
+  .contact-inner { max-width: 500px; margin: 0 auto; padding: 0 28px; }
+  .contact-inner h2 { font-family: 'Playfair Display', Georgia, serif; font-size: 1.85rem; font-weight: 600; margin-bottom: 5px; letter-spacing: -0.01em; }
+  .contact-sub { font-size: 0.92rem; color: var(--text-muted); margin-bottom: 30px; }
+  .fg { margin-bottom: 16px; }
+  .fg label { display: block; font-size: 0.82rem; font-weight: 600; color: var(--text-muted); margin-bottom: 6px; }
+  .fg input, .fg textarea {
+    width: 100%; padding: 11px 14px;
+    background: rgba(255,255,255,0.05); border: 1px solid var(--border);
+    border-radius: var(--radius-sm); color: var(--text); font-size: 0.92rem;
+    font-family: inherit; transition: border-color var(--t);
+  }
+  .fg input::placeholder, .fg textarea::placeholder { color: var(--text-subtle); }
+  .fg input:focus, .fg textarea:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-glow); }
+  .fg textarea { min-height: 108px; resize: vertical; }
+  .f-submit {
+    width: 100%; padding: 13px; background: var(--accent); color: #04111e;
+    font-size: 1rem; font-weight: 700; font-family: inherit;
+    border: none; border-radius: var(--radius-sm); cursor: pointer;
+    transition: all var(--t); box-shadow: 0 0 20px var(--accent-glow);
+  }
+  .f-submit:hover { background: #4ddecb; transform: translateY(-1px); }
+
+  /* ================================================================
+     FOOTER
+  ================================================================ */
+  footer {
+    background: rgba(4,10,20,0.85); border-top: 1px solid var(--border);
+    padding: 40px 28px; text-align: center;
+  }
+  .ft-name  { font-family: 'Playfair Display', Georgia, serif; font-size: 1.1rem; font-weight: 600; color: var(--text); margin-bottom: 5px; letter-spacing: -0.01em; }
+  .ft-creds { font-size: 0.82rem; color: var(--text-muted); letter-spacing: .04em; margin-bottom: 3px; }
+  .ft-loc   { font-size: 0.78rem; color: var(--text-subtle); margin-bottom: 18px; }
+  .ft-links { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+  .ft-links a { font-size: 0.85rem; color: var(--text-muted); }
+  .ft-links a:hover { color: var(--accent); }
+  .ft-copy  { margin-top: 18px; font-size: 0.72rem; color: var(--text-subtle); }
+
+  /* ================================================================
+     PRINT
+  ================================================================ */
+  @media print {
+    #site-header, #hero, #roles, #credentials, #about, #resume,
+    #contact, footer, .rp-overlay, .rp-header, .no-print { display: none !important; }
+    .rp-panel {
+      position: static !important; transform: none !important;
+      width: 100% !important; height: auto !important;
+      border: none !important; background: white !important;
+    }
+    body { background: white; color: #111; }
+    .rv-layout { display: grid !important; grid-template-columns: 190px 1fr !important; }
+    .rv-sidebar { background: #f5f5f5 !important; }
+    .rv-sh, .rv-sec h3 { color: #0a6e60 !important; }
+    .rv-view { display: none !important; }
+    .rv-view.active { display: block !important; }
+    .rv-name h1, .rv-item h4, .honor h4 { color: #111 !important; }
+    .rv-sum p, .rv-item li, .rv-org, .rv-ri p, .rv-ce-o,
+    .rv-clist li, .rv-sidebar p, .mbr-item p, .honor p { color: #333 !important; }
+    .sk { background: #eee !important; border-color: #ccc !important; color: #333 !important; }
+    .honor { background: #fffde7 !important; border-color: #f5c518 !important; }
+  }
+
+  /* ================================================================
+     RESPONSIVE
+  ================================================================ */
+  /* Large desktop — maximize space */
+  @media (min-width: 1100px) {
+    .hero-avatar { width: 200px; height: 200px; }
+    .hero-content { gap: 64px; }
+    .hero-desc { font-size: 1.06rem; }
+    .hero-creds-line { font-size: 1rem; letter-spacing: .08em; }
+  }
+
+  /* Mobile avatar hidden by default (desktop shows circular) */
+  .hero-av-mob  { display: none; }
+  .hero-title-row { /* no special layout on desktop */ }
+
+  @media (max-width: 900px) {
+    .hero-content { flex-direction: column; align-items: flex-start; gap: 18px; }
+    .hero-av-desk { width: 98px; height: 98px; }
+    .about-inner  { flex-direction: column; }
+    #about { overflow: visible; }
+    .about-photo-panel {
+      width: 100%; height: 320px;
+      position: relative;
+      z-index: 2;
+    }
+    .about-photo-panel img {
+      position: absolute; inset: 0;
+      height: 100%;
+      /* Gradient from 72% so face is fully visible */
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 72%, rgba(0,0,0,0) 100%);
+      -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 72%, rgba(0,0,0,0) 100%);
+    }
+    .about-content {
+      padding: 36px 28px;
+      position: relative; z-index: 1;
+      background: var(--bg);
+      max-width: none;
+    }
+    .resume-cards { max-width: 100%; }
+    .rv-layout { grid-template-columns: 1fr; }
+    .rv-sidebar { border-right: none; border-bottom: 1px solid var(--border); }
+    .rp-panel { width: 100%; }
+  }
+
+  @media (max-width: 700px) {
+    /* ── Compact hero: all sections visible on first screen ── */
+    #hero {
+      min-height: auto;
+      padding: calc(var(--header-h) + 20px) 18px 0;
+      justify-content: flex-start;
+    }
+
+    /* Hide desktop circular avatar, show mobile rectangular */
+    .hero-av-desk { display: none !important; }
+    .hero-av-mob {
+      display: flex !important;
+      width: 84px; height: 100px; flex-shrink: 0;
+      border-radius: 8px; overflow: hidden;
+      border: 2px solid rgba(255,255,255,0.2);
+      background: rgba(255,255,255,0.07);
+      align-items: center; justify-content: center;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+    }
+    .hero-av-mob img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+    .hero-av-mob .avatar-init { font-size: 1.5rem; color: rgba(255,255,255,0.45); }
+    .hero-av-mob.no-photo img { display: none; }
+    .hero-av-mob.no-photo .avatar-init { display: block; }
+
+    /* Title row: eyebrow+name+creds on LEFT, photo on RIGHT */
+    .hero-title-row {
+      display: flex; align-items: flex-start;
+      justify-content: space-between; gap: 12px;
+      margin-bottom: 12px;
+    }
+    .hero-title-col { flex: 1; }
+
+    #hero h1 { font-size: 1.5rem; line-height: 1.15; margin-bottom: 5px; }
+    .hero-eyebrow { font-size: 0.72rem; margin-bottom: 6px; }
+    .hero-creds-line { font-size: 0.74rem; margin-bottom: 0; }
+
+    /* Description: full text, fixed min-height keeps hero stable across tabs */
+    .hero-desc {
+      font-size: 0.84rem; line-height: 1.55; margin-bottom: 10px;
+      min-height: 119px;
+    }
+    .hero-cred-link { display: none; }
+    .hero-actions { gap: 8px; margin-bottom: 0; }
+    .btn-primary, .btn-outline { padding: 9px 15px; font-size: 0.82rem; border-radius: 30px; }
+
+    /* Stats: 2×2 compact grid (NOT hidden) */
+    .hero-stats {
+      display: grid !important;
+      grid-template-columns: 1fr 1fr;
+      margin-top: 16px;
+    }
+    .hero-stat {
+      padding: 12px 14px;
+      border-right: 1px solid rgba(255,255,255,0.1);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .hero-stat:nth-child(2)  { border-right: none; }
+    .hero-stat:nth-child(3)  { border-bottom: none; }
+    .hero-stat:nth-child(4)  { border-right: none; border-bottom: none; }
+    .stat-n { font-size: 1.25rem; }
+    .stat-l { font-size: 0.65rem; }
+
+    /* Compact specialty tabs */
+    #roles { flex-direction: column; position: static; }
+    .role-card { border-right: none; border-bottom: 1px solid var(--border); padding: 10px 16px; gap: 10px; }
+    .role-icon { width: 30px; height: 30px; border-radius: 7px; }
+    .role-title { font-size: 0.84rem; }
+    .role-sub   { font-size: 0.70rem; }
+
+    /* Header */
+    .hdr-nav { display: none; }
+    .hdr-name { font-size: 0.88rem; }
+
+    /* Resume panel */
+    .rp-header { flex-wrap: wrap; gap: 8px; }
+    .rv-main { padding: 18px 14px; }
+
+    /* Credentials: center each card in the viewport */
+    .cred-scroll {
+      padding: 24px 24px 28px;
+    }
+    .cred-card {
+      width: calc(100vw - 48px);
+      scroll-snap-align: center;
+    }
+  }
+
+  @media (max-width: 400px) {
+    #hero h1 { font-size: 1.3rem; }
+    .hero-av-mob { width: 70px; height: 86px; }
+    .hero-desc { font-size: 0.8rem; }
+    .stat-n { font-size: 1.1rem; }
+  }
+  </style>
+</head>
+<body>
+
+<!-- ================================================================
+     HEADER
+================================================================ -->
+<header id="site-header">
+  <div class="hdr-inner">
+    <div class="hdr-logo">
+      <span class="hdr-name" id="h-name">Samuel Galviz, MD</span>
+      <span class="hdr-creds">RDMS &middot; RVT &middot; RMA &middot; HHA</span>
+    </div>
+    <nav class="hdr-nav">
+      <a href="#about"       id="nav-about">About</a>
+      <a href="#credentials" id="nav-creds">Credentials</a>
+      <a href="#resume"      id="nav-resume">Resume</a>
+      <a href="#contact"     id="nav-contact">Contact</a>
+    </nav>
+    <button class="lang-btn" id="langBtn" onclick="toggleLanguage()">ES</button>
+  </div>
+</header>
+
+
+<!-- ================================================================
+     HERO
+================================================================ -->
+<section id="hero">
+  <div class="hero-bg"     id="hero-bg"></div>
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content">
+    <!-- Desktop: circular avatar left -->
+    <div class="hero-avatar hero-av-desk" id="hero-av">
+      <img src="headshot.jpg" alt="Samuel Galviz, MD"
+           onerror="document.getElementById('hero-av').classList.add('no-photo')">
+      <span class="avatar-init">SG</span>
+    </div>
+    <div class="hero-text">
+      <!-- Title row: on mobile, text col left + rectangular photo right -->
+      <div class="hero-title-row">
+        <div class="hero-title-col">
+          <p class="hero-eyebrow" id="hero-eyebrow">General Surgery</p>
+          <h1 id="hero-h1">Samuel D. Galviz, MD</h1>
+          <p class="hero-creds-line">RDMS (AB) &middot; RVT &middot; RMA &middot; HHA</p>
+        </div>
+        <!-- Mobile: rectangular photo right of title -->
+        <div class="hero-av-mob">
+          <img src="headshot.jpg" alt="Samuel Galviz, MD" onerror="this.parentElement.classList.add('no-photo')">
+          <span class="avatar-init">SG</span>
+        </div>
+      </div>
+      <p class="hero-desc"      id="hero-desc"></p>
+      <p class="hero-cred-link" id="hero-cred"></p>
+      <div class="hero-actions">
+        <button class="btn-primary" onclick="openResume('short')" id="hero-cta1">View Resume</button>
+        <a href="#credentials" class="btn-outline" id="hero-cta2">Verify Credentials</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-stats wrap">
+    <div class="hero-stat"><span class="stat-n">10+</span><span class="stat-l" id="st1">Years of Clinical Experience</span></div>
+    <div class="hero-stat"><span class="stat-n">1,000+</span><span class="stat-l" id="st2">Surgical Procedures</span></div>
+    <div class="hero-stat"><span class="stat-n">500+</span><span class="stat-l" id="st3">Ultrasound Studies</span></div>
+    <div class="hero-stat"><span class="stat-n">4</span><span class="stat-l" id="st4">US Certifications</span></div>
+  </div>
+</section>
+
+
+<!-- ================================================================
+     ROLE TABS
+================================================================ -->
+<div id="roles">
+  <div class="role-card" id="tab-surgery"    onclick="switchTab('surgery')">
+    <div class="role-icon">
+      <img src="icon-surgery.png" alt="" class="tab-icon-img"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='inline'">
+      <span class="icon-fb" style="display:none">⚕</span>
+    </div>
+    <div><div class="role-title" id="tab-t1">General Surgery</div>
+         <div class="role-sub"   id="tab-s1">MD &middot; 1,000+ Procedures</div></div>
+  </div>
+  <div class="role-card" id="tab-sonography" onclick="switchTab('sonography')">
+    <div class="role-icon">
+      <img src="icon-sono.png" alt="" class="tab-icon-img"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='inline'">
+      <span class="icon-fb" style="display:none">🩻</span>
+    </div>
+    <div><div class="role-title" id="tab-t2">Diagnostic Sonography</div>
+         <div class="role-sub"   id="tab-s2">RDMS (AB) &middot; RVT</div></div>
+  </div>
+  <div class="role-card" id="tab-allied"     onclick="switchTab('allied')">
+    <div class="role-icon">
+      <img src="icon-allied.png" alt="" class="tab-icon-img"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='inline'">
+      <span class="icon-fb" style="display:none">✚</span>
+    </div>
+    <div><div class="role-title" id="tab-t3">Allied Health</div>
+         <div class="role-sub"   id="tab-s3">RMA &middot; HHA &middot; Aesthetics</div></div>
+  </div>
+</div>
+
+
+<!-- ================================================================
+     CREDENTIALS — horizontal scroll
+================================================================ -->
+<section id="credentials">
+  <div class="wrap">
+    <h2 class="sec-title" id="cred-title">Credentials &amp; Verification</h2>
+    <p  class="sec-sub"   id="cred-sub">Drag or swipe to explore &mdash; click to verify</p>
+  </div>
+
+  <div class="cred-scroll-outer">
+    <div class="cred-scroll" id="credScroll">
+
+      <div class="cred-card surgery" data-abbr="MD">
+        <div class="cred-top"><span class="cred-abbr">MD</span><span class="cred-flag">VE</span></div>
+        <h3 id="c1n">Doctor of Medicine</h3>
+        <p class="cred-issuer">Universidad de Los Andes, Venezuela</p>
+        <p class="cred-detail" id="c1d">License No. 107466 &middot; Issued 2014</p>
+        <p class="cred-note"   id="c1o">U.S. Equivalency: SPANTRAN/TEC (NACES) · Sep 2024</p>
+        <a href="Mr. Samuel Uzcategui (AE).pdf" target="_blank" class="verify-btn" id="c1b">View Evaluation →</a>
+      </div>
+
+      <div class="cred-card surgery" data-abbr="GS">
+        <div class="cred-top"><span class="cred-abbr">GS</span><span class="cred-flag">VE</span></div>
+        <h3 id="c2n">Specialist in General Surgery</h3>
+        <p class="cred-issuer">Universidad de Los Andes / Hospital Central</p>
+        <p class="cred-detail" id="c2d">Issued January 2021</p>
+        <p class="cred-note"   id="c2o">U.S. Equivalency: Carnegie Evaluations (NACES) · Dec 2025</p>
+        <a href="Mr. Samuel Uzcategui (AE).pdf" target="_blank" class="verify-btn" id="c2b">View Carnegie Eval →</a>
+      </div>
+
+      <div class="cred-card sonography" data-abbr="RDMS">
+        <div class="cred-top"><span class="cred-abbr">RDMS</span><span class="cred-flag">US</span></div>
+        <h3 id="c3n">Registered Diagnostic Medical Sonographer</h3>
+        <p class="cred-issuer">ARDMS-APCA &middot; Abdomen</p>
+        <p class="cred-detail" id="c3d">Cert. No. 322825 &middot; Issued December 2024</p>
+        <span class="cred-status">● Active</span>
+        <a href="https://www.ardms.org/maintain-certification/registrant-support/statusverification/"
+           target="_blank" class="verify-btn" id="c3b">Verify ARDMS →</a>
+      </div>
+
+      <div class="cred-card sonography" data-abbr="RVT">
+        <div class="cred-top"><span class="cred-abbr">RVT</span><span class="cred-flag">US</span></div>
+        <h3 id="c4n">Registered Vascular Technologist</h3>
+        <p class="cred-issuer">ARDMS-APCA</p>
+        <p class="cred-detail" id="c4d">Cert. No. 322825 &middot; Issued September 2025</p>
+        <span class="cred-status">● Active</span>
+        <a href="https://www.ardms.org/maintain-certification/registrant-support/statusverification/"
+           target="_blank" class="verify-btn" id="c4b">Verify ARDMS →</a>
+      </div>
+
+      <div class="cred-card allied" data-abbr="RMA">
+        <div class="cred-top"><span class="cred-abbr">RMA</span><span class="cred-flag">US</span></div>
+        <h3 id="c5n">Registered Medical Assistant</h3>
+        <p class="cred-issuer">American Registry of Medical Assistants (ARMA)</p>
+        <p class="cred-detail" id="c5d">Reg. No. 155126 &middot; Issued May 2026</p>
+        <span class="cred-status">● Active</span>
+        <!-- Copy RMA PDF to this folder as "RMA-Credential.pdf" -->
+        <a href="RMA-Credential.pdf" target="_blank" class="verify-btn" id="c5b">View Credential →</a>
+      </div>
+
+      <div class="cred-card allied" data-abbr="HHA">
+        <div class="cred-top"><span class="cred-abbr">HHA</span><span class="cred-flag">US</span></div>
+        <h3 id="c6n">Home Health Aide</h3>
+        <p class="cred-issuer">Efficient Care Training Center, New York</p>
+        <p class="cred-detail" id="c6d">Cert. No. 01394319 &middot; Issued November 2025</p>
+        <p class="cred-note"   id="c6o">Approved by NYS Dept. of Education</p>
+        <span class="cred-status">● Active</span>
+      </div>
+
+      <div class="cred-card aesthetic" data-abbr="MAE">
+        <div class="cred-top"><span class="cred-abbr">MAE</span><span class="cred-flag">VE</span></div>
+        <h3 id="c7n">Diploma in Facial &amp; Body Aesthetics</h3>
+        <p class="cred-issuer">Universidad de Los Andes (ULA), Táchira</p>
+        <p class="cred-detail" id="c7d">400 hours &middot; Issued August 2023</p>
+        <p class="cred-note"   id="c7o">ULA University Council · Res. No. 0578/19</p>
+        <span class="cred-status">● Active</span>
+      </div>
+
+    </div><!-- /cred-scroll -->
+    <!-- Scroll dots -->
+    <div class="scroll-hint wrap">
+      <span id="scroll-dots"></span>
+      <span style="margin-left:6px" id="scroll-hint-txt">Drag to explore</span>
+    </div>
+  </div>
+</section>
+
+
+<!-- ================================================================
+     ABOUT
+================================================================ -->
+<section id="about">
+  <div class="about-inner">
+
+    <div class="about-photo-panel" id="about-panel">
+      <img src="headshot.jpg" alt="Samuel Galviz, MD"
+           onload="document.getElementById('about-panel').classList.add('has-photo')"
+           onerror="document.getElementById('about-panel').classList.add('no-photo')">
+      <div class="about-ph-init">SG</div>
+    </div>
+
+    <div class="about-content">
+      <h2 id="about-title">About</h2>
+      <p id="about-p1"></p>
+      <p id="about-p2"></p>
+      <div class="about-links">
+        <a href="https://www.linkedin.com/in/samuelgalviz/" target="_blank" class="btn-outline" id="about-li">LinkedIn</a>
+        <a href="Samuel-Galviz-CV.pdf" target="_blank" class="btn-sm" id="about-cv">Download Full CV</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ================================================================
+     RESUME — compact trigger
+================================================================ -->
+<section id="resume">
+  <div class="wrap">
+    <h2 class="sec-title" id="res-title">Digital Resume</h2>
+    <p  class="sec-sub"   id="res-sub">Open a clean, printable view of my credentials</p>
+    <div class="resume-cards">
+      <div class="resume-cta-card" onclick="openResume('short')">
+        <div class="rcc-icon">📄</div>
+        <div class="rcc-content">
+          <div class="rcc-title" id="rcc-t1">Resume</div>
+          <div class="rcc-sub"   id="rcc-s1">Quick overview — 2 pages</div>
+        </div>
+        <span class="rcc-arrow">→</span>
+      </div>
+      <div class="resume-cta-card" onclick="openResume('full')">
+        <div class="rcc-icon">📚</div>
+        <div class="rcc-content">
+          <div class="rcc-title" id="rcc-t2">Full CV</div>
+          <div class="rcc-sub"   id="rcc-s2">Complete academic history</div>
+        </div>
+        <span class="rcc-arrow">→</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ================================================================
+     RESUME PANEL (slide-in)
+================================================================ -->
+<div class="rp-overlay" id="rpOverlay" onclick="closeResume()"></div>
+
+<div class="rp-panel" id="rpPanel">
+  <div class="rp-header no-print">
+    <span class="rp-title" id="rp-title">Resume</span>
+    <div class="rp-tabs">
+      <button class="rp-tab active" id="rp-btn-short" onclick="showRV('short')">Resume</button>
+      <button class="rp-tab"        id="rp-btn-full"  onclick="showRV('full')">Full CV</button>
+    </div>
+    <div class="rp-actions">
+      <a href="Samuel-Galviz-Resume.pdf" target="_blank" class="btn-sm no-print" id="dl-res">⬇ PDF</a>
+      <a href="Samuel-Galviz-CV.pdf"     target="_blank" class="btn-sm no-print" id="dl-cv">⬇ Full CV</a>
+      <button onclick="window.print()" class="btn-sm no-print" id="btn-print">🖨 Print</button>
+    </div>
+    <button class="rp-close no-print" onclick="closeResume()">✕</button>
+  </div>
+
+  <div class="rp-body">
+
+    <!-- ---- SHORT RESUME ---- -->
+    <div class="rv-view active" id="rv-short">
+      <div class="rv-layout">
+        <aside class="rv-sidebar">
+          <div class="rv-photo">
+            <img src="headshot.jpg" alt="" onerror="this.style.display='none'">
+          </div>
+          <div>
+            <p class="rv-sh" id="rvs-contact">Contact</p>
+            <p>Brooklyn, NY 11204</p>
+            <p>(332) 285-6232</p>
+            <p><a href="mailto:samuel.galviz@gmail.com">samuel.galviz@gmail.com</a></p>
+            <p><a href="https://drsamuelgalviz.com">drsamuelgalviz.com</a></p>
+          </div>
+          <div>
+            <p class="rv-sh" id="rvs-skills">Core Skills</p>
+            <span class="sk">Diagnostic Ultrasound</span>
+            <span class="sk">Vascular Imaging (RVT)</span>
+            <span class="sk">Abdominal Sonography</span>
+            <span class="sk">Ultrasound-Guided Proc.</span>
+            <span class="sk">Phlebotomy</span>
+            <span class="sk">Surgical Anatomy</span>
+            <span class="sk">EHR Management</span>
+            <span class="sk">Patient Coordination</span>
+            <span class="sk">Vital Signs Monitoring</span>
+            <span class="sk">Medication Admin.</span>
+          </div>
+          <div>
+            <p class="rv-sh" id="rvs-langs">Languages</p>
+            <p id="rvs-l1">Spanish — Native</p>
+            <p id="rvs-l2">English — Working Knowledge</p>
+          </div>
+        </aside>
+
+        <div class="rv-main">
+          <div class="rv-name">
+            <h1>Samuel D. Galviz, MD</h1>
+            <p>RDMS (AB) &middot; RVT &middot; RMA &middot; HHA</p>
+          </div>
+
+          <div class="rv-sec rv-sum">
+            <h3 id="rvh-sum">Professional Summary</h3>
+            <p>Highly credentialed healthcare professional combining a background as a board-certified Physician and General Surgery Specialist (Venezuela, NACES-evaluated, U.S.-equivalent) with U.S.-obtained registrations in Diagnostic Medical Sonography (RDMS-AB), Vascular Technology (RVT), Medical Assisting (RMA), and Home Health Care (HHA). Over 10 years of progressive clinical experience across surgical, imaging, and direct patient care settings. Bilingual English/Spanish. Seeking clinical roles in imaging, medical assisting, or patient care in the New York metropolitan area.</p>
+          </div>
+
+          <div class="rv-sec">
+            <h3 id="rvh-creds">Credentials &amp; Licensure</h3>
+            <ul class="rv-clist">
+              <li><strong>Registered Medical Assistant (RMA)</strong> &middot; ARMA &middot; Reg. 155126 &middot; May 2026</li>
+              <li><strong>Registered Vascular Technologist (RVT)</strong> &middot; ARDMS-APCA &middot; Cert. 322825 &middot; Sep 2025</li>
+              <li><strong>Registered Diagnostic Medical Sonographer (RDMS-AB)</strong> &middot; ARDMS-APCA &middot; Cert. 322825 &middot; Dec 2024</li>
+              <li><strong>Home Health Aide (HHA)</strong> &middot; Efficient Care Training Center, NY &middot; Cert. 01394319 &middot; Nov 2025</li>
+            </ul>
+          </div>
+
+          <div class="rv-sec">
+            <h3 id="rvh-exp">Professional Experience</h3>
+            <div class="rv-item">
+              <div class="rv-ihead"><div><h4>Home Health Aide</h4><p class="rv-org">Private Household of Alessandro Carozza — Manhattan, NY</p></div><span class="rv-date">Aug 2024 – Mar 2026</span></div>
+              <ul>
+                <li>Comprehensive in-home care for a geriatric patient: ADLs, medication administration, vital signs monitoring, and fall prevention.</li>
+                <li>Maintained communication with legal guardian and care team to ensure continuity and safety.</li>
+              </ul>
+            </div>
+            <div class="rv-item">
+              <div class="rv-ihead"><div><h4>Diagnostic Medical Sonographer</h4><p class="rv-org">Medical Unit Juan de Dios CA — San Cristóbal, Venezuela</p></div><span class="rv-date">Jul 2023 – Apr 2024</span></div>
+              <ul>
+                <li>Performed 500+ diagnostic ultrasound studies: abdomen, breast, soft tissue, urinary system — high diagnostic accuracy.</li>
+                <li>Conducted ultrasound-guided procedures (paracentesis, abscess drainage); patient education and monitoring.</li>
+              </ul>
+            </div>
+            <div class="rv-item">
+              <div class="rv-ihead"><div><h4>General Surgeon &amp; Surgical Specialist</h4><p class="rv-org">San Cristóbal Central Hospital — Venezuela</p></div><span class="rv-date">Jan 2021 – Apr 2023</span></div>
+              <ul>
+                <li>1,000+ elective and emergency procedures: open, laparoscopic, and mini-laparoscopic (cholecystectomy, hernioplasty, appendectomy, abdominal trauma).</li>
+                <li>Led perioperative care with multidisciplinary teams in a high-volume public hospital.</li>
+              </ul>
+            </div>
+            <div class="rv-item">
+              <div class="rv-ihead"><div><h4>Surgical Resident – General Surgery</h4><p class="rv-org">San Cristóbal Central Hospital, Postgraduate Residency</p></div><span class="rv-date">2017 – 2021</span></div>
+              <ul><li>4-year accredited residency; progressive clinical responsibility across emergency, elective, and laparoscopic surgery.</li></ul>
+            </div>
+            <div class="rv-item">
+              <div class="rv-ihead"><div><h4>Healthcare Manager (Chief Physician)</h4><p class="rv-org">Consultorio Popular Palo Gordo — Venezuela</p></div><span class="rv-date">Jan 2021 – Apr 2024</span></div>
+              <ul><li>Directed clinical operations: prevention, primary care, and emergency programs; managed staff, resources, and patient flow.</li></ul>
+            </div>
+          </div>
+
+          <div class="rv-sec">
+            <h3 id="rvh-edu">Education</h3>
+            <div class="rv-item">
+              <div class="rv-ihead"><div><h4>Specialist Degree in General Surgery (Postgraduate)</h4><p class="rv-org">Universidad de Los Andes, Venezuela</p><p class="rv-note">U.S. Equiv.: Two years of graduate study — Carnegie Evaluations LLC (NACES), Dec 2025</p></div><span class="rv-date">2017 – 2021</span></div>
+            </div>
+            <div class="rv-item">
+              <div class="rv-ihead"><div><h4>Doctor of Medicine (MD)</h4><p class="rv-org">Universidad de Los Andes, Venezuela</p><p class="rv-note">U.S. Equiv.: First professional degree, GPA 3.25/4.00, 179.5 credits — SPANTRAN/TEC (NACES), Sep 2024</p></div><span class="rv-date">2007 – 2014</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><!-- /rv-short -->
+
+
+    <!-- ---- FULL CV ---- -->
+    <div class="rv-view" id="rv-full">
+      <div class="rv-layout">
+        <aside class="rv-sidebar">
+          <div class="rv-photo">
+            <img src="headshot.jpg" alt="" onerror="this.style.display='none'">
+          </div>
+          <div>
+            <p class="rv-sh" id="rv2-sc">Contact</p>
+            <p>Brooklyn, NY 11204</p><p>(332) 285-6232</p>
+            <p><a href="mailto:samuel.galviz@gmail.com">samuel.galviz@gmail.com</a></p>
+            <p><a href="https://drsamuelgalviz.com">drsamuelgalviz.com</a></p>
+          </div>
+          <div>
+            <p class="rv-sh" id="rv2-ss">Core Skills</p>
+            <span class="sk">Diagnostic Ultrasound</span><span class="sk">Vascular Imaging (RVT)</span>
+            <span class="sk">Abdominal Sonography</span><span class="sk">Ultrasound-Guided Proc.</span>
+            <span class="sk">Phlebotomy</span><span class="sk">Surgical Anatomy</span>
+            <span class="sk">EHR Management</span><span class="sk">Patient Coordination</span>
+            <span class="sk">Vital Signs Monitoring</span><span class="sk">Medication Admin.</span>
+            <span class="sk">Clinical Research</span><span class="sk">Medical Education</span>
+          </div>
+          <div>
+            <p class="rv-sh" id="rv2-sl">Languages</p>
+            <p id="rv2-l1">Spanish — Native</p>
+            <p id="rv2-l2">English — Working Knowledge</p>
+          </div>
+          <div>
+            <p class="rv-sh" id="rv2-sm">Memberships</p>
+            <p><strong>SDMS</strong> — #1384614 (2025–present)</p>
+            <p style="margin-top:5px"><strong>Medical Assoc. Táchira</strong> — #5047 (2013–present)</p>
+          </div>
+          <div>
+            <p class="rv-sh" id="rv2-slic">Professional Licenses</p>
+            <p>RVT — ARDMS-APCA (Sep 2025)</p>
+            <p>RDMS-AB — ARDMS-APCA (Dec 2024)</p>
+            <p>Surgery Specialist — MPPS VE (Jan 2021)</p>
+            <p>MD — MPPS VE, Lic. #107466 (Jul 2014)</p>
+          </div>
+        </aside>
+
+        <div class="rv-main">
+          <div class="rv-name">
+            <h1>Samuel Dario Abraham Galviz Uzcategui, MD</h1>
+            <p>RDMS (AB) &middot; RVT &middot; RMA &middot; HHA &middot; Specialist in General Surgery</p>
+          </div>
+          <div class="rv-sec rv-sum">
+            <h3 id="rv2-hsum">Professional Summary</h3>
+            <p>Highly credentialed healthcare professional combining a background as a board-certified Physician and General Surgery Specialist (Venezuela, NACES-evaluated, U.S.-equivalent) with U.S.-obtained registrations in RDMS-AB, RVT, RMA, and HHA. Over 10 years of clinical experience across surgical, imaging, and direct patient care. Published researcher, academic lecturer, and former healthcare manager. Bilingual English/Spanish.</p>
+          </div>
+          <div class="rv-sec">
+            <h3 id="rv2-hcred">Credentials &amp; Licensure</h3>
+            <ul class="rv-clist">
+              <li><strong>RMA</strong> &middot; ARMA &middot; Reg. 155126 &middot; May 2026</li>
+              <li><strong>RVT</strong> &middot; ARDMS-APCA &middot; Cert. 322825 &middot; Sep 2025</li>
+              <li><strong>RDMS-AB</strong> &middot; ARDMS-APCA &middot; Cert. 322825 &middot; Dec 2024</li>
+              <li><strong>HHA</strong> &middot; Efficient Care Training Center, NY &middot; Cert. 01394319 &middot; Nov 2025</li>
+              <li><strong>Specialist in General Surgery</strong> &middot; MPPS Venezuela &middot; Jan 2021</li>
+              <li><strong>Doctor of Medicine (MD)</strong> &middot; MPPS Venezuela &middot; Lic. 107466 &middot; Jul 2014</li>
+            </ul>
+          </div>
+          <div class="rv-sec">
+            <h3 id="rv2-hedu">Education</h3>
+            <div class="rv-item">
+              <div class="rv-ihead"><div><h4>Specialist Degree in General Surgery (Postgraduate)</h4><p class="rv-org">Universidad de Los Andes / Hospital Central de San Cristóbal</p><p class="rv-note">Thesis: "Validation of the Mannheim Prognostic Index…" · Carnegie Evaluations (NACES), Dec 2025</p></div><span class="rv-date">2017 – 2021</span></div>
+            </div>
+            <div class="rv-item">
+              <div class="rv-ihead"><div><h4>Doctor of Medicine (MD)</h4><p class="rv-org">Universidad de Los Andes — School of Medicine</p><p class="rv-note">GPA 3.25/4.00, 179.5 U.S. credits · SPANTRAN/TEC (NACES), Sep 2024</p></div><span class="rv-date">2007 – 2014</span></div>
+            </div>
+          </div>
+          <div class="rv-sec">
+            <h3 id="rv2-hexp">Professional Experience</h3>
+            <div class="rv-item"><div class="rv-ihead"><div><h4>Home Health Aide</h4><p class="rv-org">Private Household A. Carozza — Manhattan, NY</p></div><span class="rv-date">Aug 2024–Mar 2026</span></div><ul><li>Comprehensive geriatric care: ADLs, medication administration, vital signs, fall prevention.</li></ul></div>
+            <div class="rv-item"><div class="rv-ihead"><div><h4>General Surgery Specialist &amp; Sonographer</h4><p class="rv-org">Unidad Médica Juan de Dios CA — Venezuela</p></div><span class="rv-date">Mar 2021–May 2024</span></div><ul><li>Surgical evaluations and elective/emergency procedures; 500+ ultrasound studies (abdominal, renal, thyroid, breast, vascular Doppler).</li></ul></div>
+            <div class="rv-item"><div class="rv-ihead"><div><h4>Specialist Physician — General Surgery</h4><p class="rv-org">Hospital Central de San Cristóbal — Venezuela</p></div><span class="rv-date">Jan 2021–Jul 2023</span></div><ul><li>Full clinical autonomy in tertiary hospital; supervised residents; 40-60 hrs/week including on-call.</li></ul></div>
+            <div class="rv-item"><div class="rv-ihead"><div><h4>Chief Physician / Healthcare Manager</h4><p class="rv-org">Consultorio Popular Palo Gordo — Venezuela</p></div><span class="rv-date">Jun 2021–Jan 2024</span></div><ul><li>Led clinic operations; prenatal programs (500+ patients); cervical cancer screening (300+); CORPOSALUD recognition 2024.</li></ul></div>
+            <div class="rv-item"><div class="rv-ihead"><div><h4>Postgraduate Resident — General Surgery</h4><p class="rv-org">Hospital Central de San Cristóbal</p></div><span class="rv-date">2017 – 2021</span></div><ul><li>4-year accredited residency with progressive surgical responsibility.</li></ul></div>
+            <div class="rv-item"><div class="rv-ihead"><div><h4>Surgery Resident</h4><p class="rv-org">Hospital Militar Cap. Dr. G. Hernández — Venezuela</p></div><span class="rv-date">Feb 2016–Feb 2018</span></div><ul><li>Selected via competitive process (17/20); first assistant in general and laparoscopic procedures.</li></ul></div>
+            <div class="rv-item"><div class="rv-ihead"><div><h4>Resident Physician — Surgery Rotations</h4><p class="rv-org">Hospital Central de San Cristóbal</p></div><span class="rv-date">Aug 2015–Jul 2016</span></div><ul><li>Rotations: General, Urology, Thoracic, Cardiovascular, Plastic, Breast, Maxillofacial, Hand Surgery.</li></ul></div>
+            <div class="rv-item"><div class="rv-ihead"><div><h4>Rural Physician</h4><p class="rv-org">Hospital Tipo I de Coloncito — Venezuela</p></div><span class="rv-date">Apr 2014–Apr 2015</span></div><ul><li>Emergency surgical care, obstetric deliveries, outpatient primary care, prenatal emphasis.</li></ul></div>
+          </div>
+          <div class="rv-sec">
+            <h3 id="rv2-hres">Research &amp; Publications</h3>
+            <div class="rv-ri"><h4>Validation of the Mannheim Prognostic Index for Mortality in Patients with Peritonitis</h4><p>Hospital Central de San Cristóbal – ULA &middot; Dec 2020</p></div>
+            <div class="rv-ri"><h4>Management of Björck Grade 3A Open Abdomen — Improvised VAC System in Necrotizing Pancreatitis</h4><p>SOVERCI — Venezuelan Clinical Case Competition &middot; Nov 2020</p></div>
+            <div class="rv-ri"><h4>Conservative Management with VAC Therapy of Esophageal Fistula (Iatrogenic Perforation)</h4><p>SOVERCI &middot; Nov 2020</p></div>
+            <div class="rv-ri"><h4>Achalasia in a Patient with Two Bariatric Surgeries — Case Report</h4><p>SOVERCI &middot; Nov 2020</p></div>
+            <div class="rv-ri"><h4>Prevalence of Self-Medication with Antibiotics — Urban Outpatient Clinic</h4><p>Universidad de Los Andes — 1st Scientific Congress of Medical Students &middot; Oct 2011</p></div>
+          </div>
+          <div class="rv-sec">
+            <h3 id="rv2-htch">Teaching &amp; Presentations</h3>
+            <div class="rv-item"><div class="rv-ihead"><div><h4>Thesis Committee Member (Jury Examiner)</h4><p class="rv-org">Universidad Rómulo Gallegos / Hospital Central</p></div><span class="rv-date">Oct 2021</span></div></div>
+            <div class="rv-item"><div class="rv-ihead"><div><h4>Keynote: "Blunt Abdominal Trauma"</h4><p class="rv-org">V Scientific Congress "Dr. Pedro Ramírez Duque" — ACUEM/ULA</p></div><span class="rv-date">Sep 2022</span></div></div>
+            <div class="rv-item"><div class="rv-ihead"><div><h4>Workshop Instructor: Emergency Room Trauma Course (ERTC)</h4><p class="rv-org">International Committee of the Red Cross (ICRC)</p></div><span class="rv-date">Sep 2019</span></div></div>
+            <div class="rv-item"><div class="rv-ihead"><div><h4>Workshop Organizer: Surgical Suturing &amp; Knot-Tying</h4><p class="rv-org">FOMEC Group — Universidad de Los Andes</p></div><span class="rv-date">May 2021</span></div></div>
+          </div>
+          <div class="rv-sec">
+            <h3 id="rv2-hce">Selected Continuing Education</h3>
+            <div class="rv-ce"><div><p class="rv-ce-n">Three-Day Echocardiography Seminar (15.50 CME)</p><p class="rv-ce-o">SDMS / R&amp;A Blue Sonoworlds LLC</p></div><span class="rv-date">Dec 2024</span></div>
+            <div class="rv-ce"><div><p class="rv-ce-n">Ultrasound Physics vCourse (14.00 SPI)</p><p class="rv-ce-o">SDMS / R&amp;A Blue Sonoworlds LLC</p></div><span class="rv-date">Aug 2024</span></div>
+            <div class="rv-ce"><div><p class="rv-ce-n">Abdominal Wall Surgery Postgrad Course — 36h · Distinction 10/10</p><p class="rv-ce-o">Instituto Universitario Italiano di Rosario (IUNIR)</p></div><span class="rv-date">Oct 2023</span></div>
+            <div class="rv-ce"><div><p class="rv-ce-n">Diploma in Facial &amp; Body Aesthetics — 400 hours</p><p class="rv-ce-o">Universidad de Los Andes (ULA), Táchira</p></div><span class="rv-date">Aug 2023</span></div>
+            <div class="rv-ce"><div><p class="rv-ce-n">Diploma in General Ultrasound — 410 hours</p><p class="rv-ce-o">CORPOSALUD Táchira</p></div><span class="rv-date">Nov 2021</span></div>
+            <div class="rv-ce"><div><p class="rv-ce-n">Basic Laparoscopic Simulation Course</p><p class="rv-ce-o">Universidad Central de Venezuela (UCV) – Life &amp; Health</p></div><span class="rv-date">Jan 2021</span></div>
+            <div class="rv-ce"><div><p class="rv-ce-n">Emergency Room Trauma Course (ERTC)</p><p class="rv-ce-o">International Committee of the Red Cross (ICRC)</p></div><span class="rv-date">Nov 2018</span></div>
+            <div class="rv-ce"><div><p class="rv-ce-n">Advanced Cardiovascular Life Support (ACLS)</p><p class="rv-ce-o">CEIPEM – American Heart Association (AHA)</p></div><span class="rv-date">Feb 2015</span></div>
+          </div>
+          <div class="rv-sec">
+            <h3 id="rv2-hhon">Honors &amp; Awards</h3>
+            <div class="honor"><h4>Recognition for Outstanding Leadership &amp; Management</h4><p>CORPOSALUD Táchira – Sanitary District No. 09 · May 2024<br>Prenatal programs (500+ patients), cervical cancer screening (300+), ER reorganization, epidemiological digitalization.</p></div>
+            <div class="honor"><h4>Academic Excellence Award</h4><p>Universidad de Los Andes — School of Medicine · October 2009<br>Outstanding academic performance during the 2007–2008 academic year.</p></div>
+          </div>
+        </div>
+      </div>
+    </div><!-- /rv-full -->
+
+  </div><!-- /rp-body -->
+</div><!-- /rp-panel -->
+
+
+<!-- ================================================================
+     CONTACT
+================================================================ -->
+<section id="contact">
+  <div class="contact-inner">
+    <h2 id="ct-title">Get in touch</h2>
+    <p class="contact-sub" id="ct-sub">Send a message and I'll get back to you as soon as possible.</p>
+    <form action="https://formspree.io/f/xykddqkq" method="POST">
+      <div class="fg"><label id="lbl-n">Name</label><input type="text" name="name" required placeholder="Your name" id="inp-n"></div>
+      <div class="fg"><label id="lbl-e">Email</label><input type="email" name="email" required placeholder="your@email.com" id="inp-e"></div>
+      <div class="fg"><label id="lbl-m">Message</label><textarea name="message" required placeholder="Your message" id="inp-m"></textarea></div>
+      <button type="submit" class="f-submit" id="btn-sub">Send message</button>
+    </form>
+  </div>
+</section>
+
+
+<!-- ================================================================
+     FOOTER
+================================================================ -->
+<footer>
+  <p class="ft-name">Samuel D. Galviz, MD</p>
+  <p class="ft-creds">RDMS (AB) &middot; RVT &middot; RMA &middot; HHA</p>
+  <p class="ft-loc" id="ft-loc">Based in Brooklyn, New York</p>
+  <div class="ft-links">
+    <a href="mailto:samuel.galviz@gmail.com">samuel.galviz@gmail.com</a>
+    <a href="https://www.linkedin.com/in/samuelgalviz/" target="_blank">LinkedIn</a>
+    <a href="Samuel-Galviz-CV.pdf" target="_blank" id="ft-cv">Download CV</a>
+    <a href="https://www.ardms.org/maintain-certification/registrant-support/statusverification/" target="_blank" id="ft-ver">Verify ARDMS</a>
+  </div>
+  <p class="ft-copy" id="ft-copy">&copy; 2026 Samuel D. Galviz, MD. All rights reserved.</p>
+</footer>
+
+
+<!-- ================================================================
+     JAVASCRIPT
+================================================================ -->
+<script>
+/* ---- Data ---- */
+const C = {
+  EN: {
+    nav:    { about:'About', creds:'Credentials', resume:'Resume', contact:'Contact' },
+    hero:   {
+      cta1:'View Resume', cta2:'Verify Credentials',
+      surgery:    { eyebrow:'General Surgery',        bg:'#0d1d2e', img:"url('surgery.jpg')",    desc:'Physician and Board-Certified General Surgeon (Venezuela) with a record of over 1,000 procedures. My Venezuelan MD and General Surgery specialization are U.S.-equivalent, as validated by Carnegie Evaluations (NACES). Expertise includes elective, emergency, and advanced laparoscopic surgery.', cred:'Credential evaluation: <a href="Mr. Samuel Uzcategui (AE).pdf" target="_blank">Carnegie Evaluations Certificate →</a>' },
+      sonography: { eyebrow:'Diagnostic Sonography', bg:'#0e2448', img:"url('sonography.jpg')", desc:'Credentialed Sonographer (RDMS-AB, RVT). Integrating surgical anatomy with high-resolution imaging across abdominal, breast, vascular, and soft-tissue studies — providing critical first-line diagnostic insights.', cred:'Verify credentials: <a href="https://www.ardms.org/maintain-certification/registrant-support/statusverification/" target="_blank">ARDMS Status Verification →</a> (Name: Samuel Galviz · ID: 322825)' },
+      allied:     { eyebrow:'Allied Health',          bg:'#0b2c22', img:"url('care.jpg')",       desc:'Registered Medical Assistant (RMA) and Home Health Aide (HHA) in New York, with additional formal training in Medical Aesthetics. Bringing clinical depth and patient-centered care to every direct care setting.', cred:'' }
+    },
+    tabs:   {
+      surgery:    { t:'General Surgery',       s:'MD · 1,000+ Procedures' },
+      sonography: { t:'Diagnostic Sonography', s:'RDMS (AB) · RVT' },
+      allied:     { t:'Allied Health',         s:'RMA · HHA · Aesthetics' }
+    },
+    stats:  ['Years of Clinical Experience','Surgical Procedures','Ultrasound Studies','US Certifications'],
+    creds:  { title:'Credentials & Verification', sub:'Drag or swipe to explore — click to verify' },
+    about:  {
+      title:'About',
+      p1:'My career bridges high-level medical training and direct patient care. As a board-certified General Surgeon from Venezuela — with over a decade of clinical experience, now U.S.-credentialed as a Sonographer (RDMS-AB, RVT), Medical Assistant (RMA), and Home Health Aide — I bring a uniquely multidisciplinary perspective to every clinical setting.',
+      p2:'I view diagnostic imaging not merely as a technical function, but as an extension of surgical reasoning. My hands-on experience in the operating room informs the way I interpret an ultrasound. Currently transitioning into the U.S. healthcare system and working toward ECFMG certification, I am committed to growing and contributing meaningfully to patient outcomes in every environment I work in.',
+      li:'LinkedIn', cv:'Download Full CV'
+    },
+    resume: {
+      title:'Digital Resume', sub:'Open a clean, printable view of my credentials',
+      t1:'Resume', s1:'Quick overview — 2 pages', t2:'Full CV', s2:'Complete academic history',
+      rp:'Resume', dlRes:'⬇ PDF', dlCV:'⬇ Full CV', print:'🖨 Print',
+      tabS:'Resume', tabF:'Full CV',
+      hSum:'Professional Summary', hCred:'Credentials & Licensure', hExp:'Professional Experience', hEdu:'Education',
+      sContact:'Contact', sSkills:'Core Skills', sLangs:'Languages',
+      l1:'Spanish — Native', l2:'English — Working Knowledge',
+      hSum2:'Professional Summary', hCred2:'Credentials & Licensure', hEdu2:'Education', hExp2:'Professional Experience',
+      hRes:'Research & Publications', hTch:'Teaching & Presentations', hCE:'Selected Continuing Education', hHon:'Honors & Awards',
+      sContact2:'Contact', sSkills2:'Core Skills', sLangs2:'Languages', sMbr:'Memberships', sLic:'Professional Licenses',
+      l12:'Spanish — Native', l22:'English — Working Knowledge',
+      hint:'Drag to explore'
+    },
+    contact: { title:'Get in touch', sub:"Send a message and I'll get back to you as soon as possible.", name:'Name', email:'Email', msg:'Message', submit:'Send message', namePh:'Your name', emailPh:'your@email.com', msgPh:'Your message' },
+    footer:  { loc:'Based in Brooklyn, New York', cv:'Download CV', ver:'Verify ARDMS', copy:'© 2026 Samuel D. Galviz, MD. All rights reserved.' }
+  },
+
+  ES: {
+    nav:    { about:'Sobre mí', creds:'Credenciales', resume:'Currículum', contact:'Contacto' },
+    hero:   {
+      cta1:'Ver Currículum', cta2:'Verificar Credenciales',
+      surgery:    { eyebrow:'Cirugía General',         bg:'#0d1d2e', img:"url('surgery.jpg')",    desc:'Médico, Especialista en Cirugía General certificado en Venezuela, con más de 1,000 procedimientos. Mi título médico y especialización son equivalentes a un MD en Estados Unidos, según evaluación Carnegie Evaluations (NACES). Experiencia en cirugía electiva, de emergencia y laparoscópica avanzada.', cred:'Evaluación de credenciales: <a href="Mr. Samuel Uzcategui (AE).pdf" target="_blank">Certificado Carnegie Evaluations →</a>' },
+      sonography: { eyebrow:'Ecografía Diagnóstica',   bg:'#0e2448', img:"url('sonography.jpg')", desc:'Ecografista acreditado (RDMS-AB, RVT). Integro conocimientos de anatomía quirúrgica con imágenes de alta resolución: estudios abdominales, mamarios, vasculares y de tejidos blandos — diagnóstico preciso de primera línea.', cred:'Verificar credenciales: <a href="https://www.ardms.org/maintain-certification/registrant-support/statusverification/" target="_blank">Verificación ARDMS →</a> (Nombre: Samuel Galviz · ID: 322825)' },
+      allied:     { eyebrow:'Salud Aliada',             bg:'#0b2c22', img:"url('care.jpg')",       desc:'Asistente Médico Registrado (RMA) y Auxiliar de Salud en el Hogar (HHA) en Nueva York, con formación adicional en Estética Médica. Atención centrada en el paciente con sólida base clínica.', cred:'' }
+    },
+    tabs:   {
+      surgery:    { t:'Cirugía General',       s:'MD · +1,000 Procedimientos' },
+      sonography: { t:'Ecografía Diagnóstica', s:'RDMS (AB) · RVT' },
+      allied:     { t:'Salud Aliada',          s:'RMA · HHA · Estética' }
+    },
+    stats:  ['Años de Experiencia Clínica','Procedimientos Quirúrgicos','Estudios Ecográficos','Certificaciones en EE.UU.'],
+    creds:  { title:'Credenciales y Verificación', sub:'Desliza para explorar — clic para verificar' },
+    about:  {
+      title:'Sobre mí',
+      p1:'Mi carrera une la formación médica de alto nivel con el cuidado directo al paciente. Como Cirujano General certificado en Venezuela — con más de una década de experiencia clínica, y ahora credenciado en EE.UU. como Ecografista (RDMS-AB, RVT), Asistente Médico (RMA) y Auxiliar de Salud en el Hogar — ofrezco una perspectiva multidisciplinaria única.',
+      p2:'Veo el diagnóstico por imágenes no como una función técnica, sino como una extensión del razonamiento quirúrgico. Mi experiencia en quirófano informa la forma en que interpreto una ecografía. Actualmente en transición al sistema de salud de EE.UU. —en proceso de certificación ECFMG— estoy comprometido con crecer y contribuir significativamente en cada entorno en que me desempeño.',
+      li:'LinkedIn', cv:'Descargar CV completo'
+    },
+    resume: {
+      title:'Currículum Digital', sub:'Abre una vista limpia e imprimible de mis credenciales',
+      t1:'Currículum', s1:'Resumen rápido — 2 páginas', t2:'CV Completo', s2:'Historial académico completo',
+      rp:'Currículum', dlRes:'⬇ PDF', dlCV:'⬇ CV Completo', print:'🖨 Imprimir',
+      tabS:'Currículum', tabF:'CV Completo',
+      hSum:'Resumen Profesional', hCred:'Credenciales y Licencias', hExp:'Experiencia Profesional', hEdu:'Formación Académica',
+      sContact:'Contacto', sSkills:'Competencias', sLangs:'Idiomas',
+      l1:'Español — Nativo', l2:'Inglés — Conocimiento laboral',
+      hSum2:'Resumen Profesional', hCred2:'Credenciales y Licencias', hEdu2:'Formación Académica', hExp2:'Experiencia Profesional',
+      hRes:'Investigación y Publicaciones', hTch:'Docencia y Presentaciones', hCE:'Formación Continua (Selección)', hHon:'Premios y Reconocimientos',
+      sContact2:'Contacto', sSkills2:'Competencias', sLangs2:'Idiomas', sMbr:'Membresías', sLic:'Licencias Profesionales',
+      l12:'Español — Nativo', l22:'Inglés — Conocimiento laboral',
+      hint:'Desliza para explorar'
+    },
+    contact: { title:'Escríbeme', sub:'Envía un mensaje y te responderé lo antes posible.', name:'Nombre', email:'Correo electrónico', msg:'Mensaje', submit:'Enviar mensaje', namePh:'Tu nombre', emailPh:'tu@correo.com', msgPh:'Tu mensaje' },
+    footer:  { loc:'Con base en Brooklyn, Nueva York', cv:'Descargar CV', ver:'Verificar ARDMS', copy:'© 2026 Samuel D. Galviz, MD. Todos los derechos reservados.' }
+  }
+};
+
+/* ---- State ---- */
+let lang = 'EN', activeTab = 'surgery', activeRV = 'short', bgSwapTimer;
+
+/* ---- Resume panel ---- */
+function openResume(type) {
+  activeRV = type || 'short';
+  document.getElementById('rpPanel').classList.add('open');
+  document.getElementById('rpOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  _setRVTab(activeRV);
+}
+function closeResume() {
+  document.getElementById('rpPanel').classList.remove('open');
+  document.getElementById('rpOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+function showRV(type) { activeRV = type; _setRVTab(type); }
+function _setRVTab(type) {
+  document.getElementById('rv-short').classList.toggle('active', type === 'short');
+  document.getElementById('rv-full').classList.toggle('active',  type === 'full');
+  document.getElementById('rp-btn-short').classList.toggle('active', type === 'short');
+  document.getElementById('rp-btn-full').classList.toggle('active',  type === 'full');
+}
+/* Close panel on Escape */
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeResume(); });
+
+/* ---- Tab switch ---- */
+function switchTab(role) {
+  activeTab = role;
+  const h      = C[lang].hero[role];
+  const heroEl = document.getElementById('hero');
+  const bg     = document.getElementById('hero-bg');
+
+  /* Pause animation during transition; cancel any pending swap from a previous tab */
+  bg.classList.remove('animate');
+  clearTimeout(bgSwapTimer);
+
+  /* Update text and tabs immediately */
+  document.getElementById('hero-eyebrow').textContent = h.eyebrow;
+  document.getElementById('hero-desc').innerHTML       = h.desc;
+  document.getElementById('hero-cred').innerHTML       = h.cred || '';
+  ['surgery','sonography','allied'].forEach(r =>
+    document.getElementById('tab-'+r).className = 'role-card'
+  );
+  document.getElementById('tab-'+role).classList.add('active-'+role);
+
+  /* Fade bg image: out → swap → in */
+  heroEl.style.backgroundColor = h.bg; /* color transitions via CSS */
+  bg.style.opacity = '0';
+  bgSwapTimer = setTimeout(() => {
+    bg.style.backgroundImage = h.img;
+    bg.style.opacity = '0.32';
+    /* General Surgery background must never animate */
+    if (role !== 'surgery') bg.classList.add('animate');
+    else bg.classList.remove('animate');
+  }, 230);
+}
+
+/* ---- Language ---- */
+function toggleLanguage() {
+  lang = lang === 'EN' ? 'ES' : 'EN';
+  document.getElementById('langBtn').textContent = lang === 'EN' ? 'ES' : 'EN';
+  applyLang(); switchTab(activeTab);
+}
+function applyLang() {
+  const d = C[lang];
+  /* nav */
+  document.getElementById('nav-about').textContent   = d.nav.about;
+  document.getElementById('nav-creds').textContent   = d.nav.creds;
+  document.getElementById('nav-resume').textContent  = d.nav.resume;
+  document.getElementById('nav-contact').textContent = d.nav.contact;
+  /* hero */
+  document.getElementById('hero-cta1').textContent = d.hero.cta1;
+  document.getElementById('hero-cta2').textContent = d.hero.cta2;
+  /* stats */
+  const sl = d.stats;
+  document.getElementById('st1').textContent = sl[0];
+  document.getElementById('st2').textContent = sl[1];
+  document.getElementById('st3').textContent = sl[2];
+  document.getElementById('st4').textContent = sl[3];
+  /* tabs */
+  document.getElementById('tab-t1').textContent = d.tabs.surgery.t;
+  document.getElementById('tab-s1').textContent = d.tabs.surgery.s;
+  document.getElementById('tab-t2').textContent = d.tabs.sonography.t;
+  document.getElementById('tab-s2').textContent = d.tabs.sonography.s;
+  document.getElementById('tab-t3').textContent = d.tabs.allied.t;
+  document.getElementById('tab-s3').textContent = d.tabs.allied.s;
+  /* credentials */
+  document.getElementById('cred-title').textContent = d.creds.title;
+  document.getElementById('cred-sub').textContent   = d.creds.sub;
+  /* about */
+  document.getElementById('about-title').textContent = d.about.title;
+  document.getElementById('about-p1').textContent    = d.about.p1;
+  document.getElementById('about-p2').textContent    = d.about.p2;
+  document.getElementById('about-li').textContent    = d.about.li;
+  document.getElementById('about-cv').textContent    = d.about.cv;
+  /* resume section */
+  const r = d.resume;
+  document.getElementById('res-title').textContent = r.title;
+  document.getElementById('res-sub').textContent   = r.sub;
+  document.getElementById('rcc-t1').textContent    = r.t1;
+  document.getElementById('rcc-s1').textContent    = r.s1;
+  document.getElementById('rcc-t2').textContent    = r.t2;
+  document.getElementById('rcc-s2').textContent    = r.s2;
+  /* panel */
+  document.getElementById('rp-title').textContent   = r.rp;
+  document.getElementById('dl-res').textContent     = r.dlRes;
+  document.getElementById('dl-cv').textContent      = r.dlCV;
+  document.getElementById('btn-print').textContent  = r.print;
+  document.getElementById('rp-btn-short').textContent = r.tabS;
+  document.getElementById('rp-btn-full').textContent  = r.tabF;
+  /* short resume headings */
+  document.getElementById('rvh-sum').textContent   = r.hSum;
+  document.getElementById('rvh-creds').textContent = r.hCred;
+  document.getElementById('rvh-exp').textContent   = r.hExp;
+  document.getElementById('rvh-edu').textContent   = r.hEdu;
+  document.getElementById('rvs-contact').textContent = r.sContact;
+  document.getElementById('rvs-skills').textContent  = r.sSkills;
+  document.getElementById('rvs-langs').textContent   = r.sLangs;
+  document.getElementById('rvs-l1').textContent      = r.l1;
+  document.getElementById('rvs-l2').textContent      = r.l2;
+  /* full cv headings */
+  document.getElementById('rv2-hsum').textContent  = r.hSum2;
+  document.getElementById('rv2-hcred').textContent = r.hCred2;
+  document.getElementById('rv2-hedu').textContent  = r.hEdu2;
+  document.getElementById('rv2-hexp').textContent  = r.hExp2;
+  document.getElementById('rv2-hres').textContent  = r.hRes;
+  document.getElementById('rv2-htch').textContent  = r.hTch;
+  document.getElementById('rv2-hce').textContent   = r.hCE;
+  document.getElementById('rv2-hhon').textContent  = r.hHon;
+  document.getElementById('rv2-sc').textContent    = r.sContact2;
+  document.getElementById('rv2-ss').textContent    = r.sSkills2;
+  document.getElementById('rv2-sl').textContent    = r.sLangs2;
+  document.getElementById('rv2-sm').textContent    = r.sMbr;
+  document.getElementById('rv2-slic').textContent  = r.sLic;
+  document.getElementById('rv2-l1').textContent    = r.l12;
+  document.getElementById('rv2-l2').textContent    = r.l22;
+  /* scroll hint */
+  document.getElementById('scroll-hint-txt').textContent = r.hint;
+  /* contact */
+  const ct = d.contact;
+  document.getElementById('ct-title').textContent = ct.title;
+  document.getElementById('ct-sub').textContent   = ct.sub;
+  document.getElementById('lbl-n').textContent    = ct.name;
+  document.getElementById('lbl-e').textContent    = ct.email;
+  document.getElementById('lbl-m').textContent    = ct.msg;
+  document.getElementById('btn-sub').textContent  = ct.submit;
+  document.getElementById('inp-n').placeholder    = ct.namePh;
+  document.getElementById('inp-e').placeholder    = ct.emailPh;
+  document.getElementById('inp-m').placeholder    = ct.msgPh;
+  /* footer */
+  document.getElementById('ft-loc').textContent  = d.footer.loc;
+  document.getElementById('ft-cv').textContent   = d.footer.cv;
+  document.getElementById('ft-ver').textContent  = d.footer.ver;
+  document.getElementById('ft-copy').textContent = d.footer.copy;
+}
+
+/* ---- Credential scroll dots ---- */
+function buildDots() {
+  const sc   = document.getElementById('credScroll');
+  const cont = document.getElementById('scroll-dots');
+  if (!sc || !cont) return;
+
+  const cards = sc.querySelectorAll('.cred-card');
+  const n = cards.length;
+
+  function getStops() {
+    if (!cards[0]) return n;
+    const perView = Math.max(1, Math.floor(sc.offsetWidth / (cards[0].offsetWidth + 14)));
+    return Math.max(1, n - perView + 1);
+  }
+
+  function renderDots(count) {
+    cont.innerHTML = Array.from({ length: count }, (_, i) =>
+      `<span class="scroll-dot${i === 0 ? ' active' : ''}" data-i="${i}"></span>`
+    ).join('');
+  }
+
+  let stops = getStops();
+  renderDots(stops);
+
+  sc.addEventListener('scroll', () => {
+    const s = getStops();
+    const dotEls = cont.querySelectorAll('.scroll-dot');
+    if (dotEls.length !== s) { stops = s; renderDots(s); }
+    const maxScroll = sc.scrollWidth - sc.offsetWidth;
+    const idx = maxScroll > 0 ? Math.round(sc.scrollLeft / maxScroll * (stops - 1)) : 0;
+    cont.querySelectorAll('.scroll-dot').forEach((d, i) => {
+      d.classList.toggle('active', i === idx);
+    });
+  }, { passive: true });
+
+  window.addEventListener('resize', () => {
+    stops = getStops();
+    renderDots(stops);
+  });
+}
+
+/* ---- Drag-to-scroll credentials ---- */
+function initDragScroll() {
+  const el = document.getElementById('credScroll');
+  if (!el) return;
+  let isDown = false, startX, scrollLeft;
+  el.addEventListener('mousedown', e => {
+    isDown = true; el.classList.add('grabbing');
+    startX = e.pageX - el.offsetLeft; scrollLeft = el.scrollLeft;
+  });
+  el.addEventListener('mouseleave', () => { isDown = false; });
+  el.addEventListener('mouseup',    () => { isDown = false; el.classList.remove('grabbing'); });
+  el.addEventListener('mousemove', e => {
+    if (!isDown) return; e.preventDefault();
+    const x = e.pageX - el.offsetLeft;
+    el.scrollLeft = scrollLeft - (x - startX) * 1.6;
+  });
+}
+
+/* ---- Header border on scroll ---- */
+window.addEventListener('scroll', () => {
+  document.getElementById('site-header').style.borderBottomColor =
+    window.scrollY > 10 ? 'rgba(255,255,255,0.09)' : 'transparent';
+}, { passive: true });
+
+/* ---- About section: fixed photo on mobile ----
+   The photo sticks below the header while the about section is visible.
+   It begins un-sticking the moment the section's bottom border enters
+   the viewport (not when the next section appears).
+   Uses transform instead of top changes to stay on the GPU compositor.
+-------------------------------------------------------------------- */
+(function () {
+  var about, photoPanel, aboutInner;
+  var PHOTO_H = 320;
+  var rafId   = null;
+  var isFixed = false;
+
+  function getHeaderH() {
+    return parseFloat(getComputedStyle(document.documentElement)
+      .getPropertyValue('--header-h')) || 62;
+  }
+
+  function updateAboutPhoto() {
+    if (window.innerWidth > 900) {
+      if (isFixed) {
+        photoPanel.style.cssText  = '';
+        aboutInner.style.paddingTop = '';
+        isFixed = false;
+      }
+      return;
+    }
+
+    var headerH = getHeaderH();
+    var rect    = about.getBoundingClientRect();
+    var vh      = window.innerHeight;
+
+    /* Before sticking or fully scrolled past → normal flow */
+    if (rect.top >= headerH || rect.bottom <= 0) {
+      if (isFixed) {
+        photoPanel.style.cssText  = '';
+        aboutInner.style.paddingTop = '';
+        isFixed = false;
+      }
+      return;
+    }
+
+    /* Enter fixed phase — set layout props only once to avoid reflow */
+    if (!isFixed) {
+      photoPanel.style.position   = 'fixed';
+      photoPanel.style.left       = '0';
+      photoPanel.style.width      = '100%';
+      photoPanel.style.height     = PHOTO_H + 'px';
+      photoPanel.style.top        = headerH + 'px';
+      photoPanel.style.willChange = 'transform';
+      aboutInner.style.paddingTop = PHOTO_H + 'px';
+      isFixed = true;
+    }
+
+    /* Slide-up: only transform changes — GPU composited, zero reflow */
+    photoPanel.style.transform = rect.bottom < vh
+      ? 'translateY(' + (rect.bottom - vh) + 'px)'
+      : '';
+  }
+
+  function onScroll() {
+    if (rafId) return;
+    rafId = requestAnimationFrame(function () {
+      rafId = null;
+      updateAboutPhoto();
+    });
+  }
+
+  function init() {
+    about      = document.getElementById('about');
+    photoPanel = about.querySelector('.about-photo-panel');
+    aboutInner = about.querySelector('.about-inner');
+    if (!about || !photoPanel || !aboutInner) return;
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', updateAboutPhoto);
+    updateAboutPhoto();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+
+/* ---- Init ---- */
+window.addEventListener('DOMContentLoaded', () => {
+  applyLang();
+  switchTab('surgery');
+  /* Surgery is the default tab — leave its background static (no animate) */
+  buildDots();
+  initDragScroll();
+});
+</script>
+
+</body>
+</html>
